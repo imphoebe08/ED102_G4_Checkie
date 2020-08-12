@@ -20,10 +20,13 @@
 
 .atContent {
   max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .atContent .atContent-conterbox {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -35,6 +38,8 @@
 .atContent .atContent-left_detail {
   width: 100%;
   height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: rgba(179, 178, 178, 0.867);
 }
@@ -72,6 +77,7 @@
 }
 
 .atContent .atContent_right .atContent_rightbox {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -138,6 +144,7 @@
   padding: 30px 0 60px 0;
   background: #01a687;
   overflow: scroll;
+  -webkit-transition: all 10s linear;
   transition: all 10s linear;
 }
 
@@ -145,9 +152,12 @@
   width: 100%;
   height: auto;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   z-index: 1;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .atBox .atBox_Class .atBox-Class_content {
@@ -211,6 +221,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  -webkit-transition: all 0.8s linear;
   transition: all 0.8s linear;
   z-index: 1;
 }
@@ -227,6 +238,7 @@
   width: 100%;
   height: 100%;
   background: #01a687;
+  -webkit-transition: all 0.6s linear;
   transition: all 0.6s linear;
 }
 
@@ -240,9 +252,15 @@
   margin: auto;
   max-width: 1200px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .atClassAfter .atClassAfter_content_block .atClassAfter_content .atClassAfter-content_text {
@@ -254,7 +272,8 @@
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .atClassAfter .atClassAfter_content_block .atClassAfter_content .atClassAfter-content_pic img {
