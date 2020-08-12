@@ -1,3 +1,5 @@
+$(function(){
+    
     var CLASS_CIRCLE = '.circle';
     var CLASS_ICON = '.icon-elements';
     var CLASS_MODAL = '.modal-wrapper';
@@ -22,3 +24,5 @@
     }
 
     elementCircle.addEventListener('click', () => triggerAnimation());
+
+});

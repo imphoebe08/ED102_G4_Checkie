@@ -1,3 +1,5 @@
+$(function(){
+
 /*nav*/
 $( ".hamburger" ).click(function() {
     $(".hamburger").toggleClass("is-active");
@@ -58,4 +60,6 @@ $(function(){
     signInButton.addEventListener('click', () => {
 	    container.classList.remove("right-panel-active");
     });
+
+});
     
