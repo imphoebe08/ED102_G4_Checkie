@@ -1,0 +1,62 @@
+* {
+  outline: 1px solid red;
+  margin: 0 auto;
+}
+
+.blank {
+  height: 11.11vw;
+}
+
+.seBanner {
+  width: 100%;
+}
+
+.seBanner .seBanner_pic {
+  height: 50vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.seContent {
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.seContent .seContent_box {
+  width: 100%;
+}
+
+.seContent .seContent_box .seContent-box_title {
+  width: 100%;
+  font-size: 4vw;
+  line-height: 6vw;
+}
+
+.seContent .seContent_box .seContent-box_detail {
+  width: 30%;
+  display: inline-block;
+}
+
+.seContent .seContent_box .seContent-box_pic {
+  width: 70%;
+  float: right;
+  position: relative;
+  margin-top: calc(11.11vw - 1.1vw);
+}
+
+.seContent .seContent_box .seContent-box_pic .seContent-box-pic_img > img {
+  width: 100%;
+  position: absolute;
+}
+
+.seContent .seContent_box .seContent-box_pic .seContent-box_colorBlock {
+  position: absolute;
+  width: 100%;
+  background: #01a687;
+  position: absolute;
+  top: 3%;
+  left: 5%;
+}
+/*# sourceMappingURL=atSelf.css.map */

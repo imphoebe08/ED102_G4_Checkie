@@ -1,0 +1,91 @@
+header {
+    height: 60px;
+}
+
+button {
+    outline: none;
+}
+
+.v-stepper__content {
+    top: 0;
+    padding: 5px;
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+// .cocoCalender>.container-lg {
+//     // border: 1px solid red;
+//     .row {
+//         //border: solid 3px rgb(223, 20, 193);
+//         .col {
+//             //border: 2px solid rgb(237, 124, 4);
+//             .row {
+//                 //border: 1px solid blue;
+//                 .co-block--border {
+//                     //border: 2px solid rgb(31, 199, 211);
+//                 }
+//             }
+//         }
+//     }
+// }
+@media only screen and (max-width: 959px) {
+    .v-stepper:not(.v-stepper--vertical) .v-stepper__label {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .v-stepper:not(.v-stepper--vertical) .v-stepper__label {
+        display: none;
+    }
+    .v-stepper--alt-labels .v-stepper__step {
+        flex-basis: 30px;
+    }
+    .v-stepper--alt-labels .v-stepper__header .v-divider {
+        margin: 35px -40px 0;
+    }
+}
+
+.co-button--style {
+    @include flex(space-between);
+}
+
+.co-counselor {
+    @include flex(center);
+    // border: solid saddlebrown 1px;
+    .co-counselor-pic {
+        display: inline-block;
+        @include co-counselor(80px, 0px, 0px, 90px);
+    }
+    .co-counselor-text {
+        // border: solid rgb(68, 93, 233) 1px;
+        line-height: 80px;
+        vertical-align: top;
+        >div {
+            color: rgb(152, 152, 152);
+            display: inline-block;
+        }
+    }
+}
+
+.co-button--style {
+    margin-bottom: 10px;
+}
+
+// .v-btn__content {
+//     color: $color-blue;
+// }
+.v-btn:not(.v-btn--round).v-size--default {
+    padding: 0;
+}
+
+.button4 {
+    display: inline-block;
+    @include btn-paypage (250px, $color-blue, $fontsize);
+}
+
+@media only screen and (max-width: 575px) {
+    .button4 {
+        @include btn-paypage (120px, $color-blue, $fontsize);
+    }
+}

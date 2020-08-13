@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>諮商師 | CHECKIE</title>
+    <link rel="stylesheet" href="css/csMain.css">
+    <link rel="stylesheet"
+        href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap-grid.min.css'>
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+</head>
+
+<body>
+    <div id="app">
+        <div class="csMain">
+            <div class="checkbox-form">
+                <span v-if="screenWidth < 576" id="openForm" @click="slideToggle">搜尋篩選</span>
+                <button type="button" id="cleanSelect" @click="cleanSelect">清除重選</button>
+                <span>性別篩選</span>
+                <input type="checkbox" name="csGender[]" value="male" id="male" v-model="csGender">
+                <label for="male" class="button3-1">男</label>
+                <input type="checkbox" name="csGender[]" value="female" id="female" v-model="csGender">
+                <label for="female" class="button3-1">女</label>
+                <span v-if="screenWidth > 576"></span>
+                <span v-if="screenWidth > 576"></span>
+                <span v-if="screenWidth > 576"></span>
+            </div>
+            <div class="checkbox-form">
+                <span>地區篩選</span>
+                <input type="checkbox" name="csPosition[]" value="north" id="north" v-model="csPosition">
+                <label for="north" class="button3-1">北</label>
+                <input type="checkbox" name="csPosition[]" value="center" id="center" v-model="csPosition">
+                <label for="center" class="button3-1">中</label>
+                <input type="checkbox" name="csPosition[]" value="south" id="south" v-model="csPosition">
+                <label for="south" class="button3-1">南</label>
+                <span v-if="screenWidth > 576"></span>
+                <span v-if="screenWidth > 576"></span>
+            </div>
+            <div class="checkbox-form">
+                <span>專長篩選</span>
+                <input type="checkbox" name="csProblem[]" value="problem1" id="problem1" v-model="csProblem">
+                <label for="problem1" class="button3-1">問題一一</label>
+
+                <input type="checkbox" name="csProblem[]" value="problem2" id="problem2" v-model="csProblem">
+                <label for="problem2" class="button3-1">問題二二</label>
+
+                <input type="checkbox" name="csProblem[]" value="problem3" id="problem3" v-model="csProblem">
+                <label for="problem3" class="button3-1">問題三三</label>
+
+                <input type="checkbox" name="csProblem[]" value="problem4" id="problem4" v-model="csProblem">
+                <label for="problem4" class="button3-1">問題四四</label>
+
+                <input type="checkbox" name="csProblem[]" value="problem5" id="problem5" v-model="csProblem">
+                <label for="problem5" class="button3-1">問題五五</label>
+            </div>
+        </div>
+        <div class="csCounselor-cards">
+            <p id="csC-countCards">總共有{{countCards}}位符合您需求的諮商師</p>
+            <ul class="csCounselor-gallery">
+                <li class="csCounselor-card" v-for="(item,index) in countCards" :key="index">
+                    <div class="csCounselor-image">
+                        <img class="img-responsive"
+                            src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
+                    </div>
+                    <p class="csC-doctor__name">吳醫師</p>
+                    <p class="csC-type_title">醫師專長</p>
+                    <div class="csC-type_tag row">
+                        <span class="col-4">憂鬱</span>
+                        <span class="col-4">失眠</span>
+                    </div>
+                    <div class="csC-doctor__info">
+                        <ul class="csC-doctor__list">
+                            <li>
+                                <p class="js-list-toggle">經歷</p>
+                                <ul class="csS-list js-item-toggle">
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科病房主任</li>
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科主治醫師</li>
+                                    <li class="small"><i class="fas fa-circle"></i>國家衛生研究院台灣成癮次專科醫師訓練</li>
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科臨床研究員醫師</li>
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科總醫師</li>
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科住院醫師</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="csC-changeSlide">
+                <button id="pre" class="button3-1">前一位</button>
+                <button id="next" class="button3-1">後一位</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js'></script>
+    <script src='js/csMain.js'></script>
+</body>
+
+</html>
