@@ -1,74 +1,114 @@
+@mixin circle($width,$hight,$left,$top,$deg) {
+    width: $width;
+    height: $hight;
+    border-radius: 50%;
+    position: absolute;
+    top: $top;
+    left: $left;
+    background-clip:padding-box,border-box;
+    background-origin:padding-box,border-box;
+    background-image:linear-gradient($deg,$color-blue,$color-pink);
+    border:2px transparent solid;
+    opacity: 0.7;
+
+}
 .inBanner{
-    min-width: 100%;
-    height: 90%;
+    width: 100%;
+    height: 100vh;
     display: inline-block;
     position: relative;
-    .svgChange{
-        display: inline-block;
-        path.svg_bg{
-            display: none;
-        }
-        path.st_show.st0{
-            display: block;
-        }
-        
-        g{
-            g>*{
-                transition: all 0.1s linear;
-            }
-            @for $i  from 1 through 220{
-            g.in_Banner-ckHide:nth-child(1)>*:nth-child(#{$i}){
-                transition-delay: 0.005s*$i;
-            }
-            g.in_Banner-ckHide:nth-child(2)>*:nth-child(#{220-$i}){
-                transition-delay: 0.0035s*$i;
-            }
-            g.in_Banner-ckHide:nth-child(3)>*:nth-child(#{220-$i}){
-                transition-delay: 0.0035s*$i;
-            }
-            }
-            @for $i  from 1 through 220{
-            g:nth-child(1)>*:nth-child(#{$i}){
-                transition-delay: 0.006s*$i;
-            }
-            g:nth-child(2)>*:nth-child(#{220-$i}){
-                transition-delay: 1+0.003s*$i;
-            }
-            g:nth-child(3)>*:nth-child(#{220-$i}){
-                transition-delay: 1.5+0.003s*$i;
-            }
-            } 
-            g.in_Banner-ckHide{
-                circle{
-                    fill:transparent;
-                    transition: all 0.1s linear;
-                    // fill:transparent;
-
-                }
-                ellipse{
-                    fill:transparent;
-                    transition: all 0.1s linear;
-
-                    // fill:transparent;
-    
-                }
-            }
-            
+    @include bg;
+    background-image: url("../../img/index/inBanner/bannerbg.png");
+    background-size: cover;
+    // 固定的div
+    .inBanner_bgImg{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: block;
+        .inBanner-big_circle{
+            @include circle(550px,550px,0,0,135deg);
+            transform: translateX(-50%);
+            background-image:linear-gradient(135deg,#fff,#fff),linear-gradient(135deg,$color-blue,$color-pink);
+            border:250px transparent solid;
             
         }
-        
+        .inBanner-circle_1{
+            @include circle(200px,200px,50%,10%,200deg);
+
+        }
+        .inBanner-circle_2{
+            // @include circle(100px,100px);
+            @include circle(120px,120px,48%,58%,45deg);
+        }
+        .inBanner-circle_3{
+            // @include circle(20px,20px);
+            @include circle(100px,100px,80%,10%,30deg);
+
+        }
+        .inBanner-circle_4{
+            // @include circle(20px,20px);
+            @include circle(50px,50px,90%,60%,80deg);
+
+        }
         
     }
-    .in_Banner_img{
-        @include bg;
-        background-image: url("../image/index/inBanner/preview-2.png");
+    .inBanner_cImg{
         position: absolute;
-        top: 10%;
-        right: 0;
-        width: 50%;
-        height: 80%;
-        
-        z-index: -1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        @include bg;
+        background-image: url("../../img/index/inBanner/shapedoctor1.png");
+        width: 100%;
+        height: 100%;
+        background-position: 90% 0;
+        // background-color: red;
+        display: none;
     }
+    @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    .inBanner-logo_block{
+        width: 300px;
+        height: 250px;
+        position: absolute;
+        left: 40%;
+        top: 70%;
+        .inBanner-logo{
+            
+            svg.inBanner-hide_svg{
+                g{
+                    linearGradient{
 
+                        stop{
+                            stop-color: transparent!important;
+                        }
+                    }
+                }
+            }
+            svg{
+                width: 150px;
+                height: 150px;
+                g{
+                    @for $i  from 1 through 5 {
+                        linearGradient:nth-child(#{$i}){
+                            @for $a  from 1 through 3{
+                                stop:nth-child(#{$a}){
+                                    transition-delay: $i*$a*0.05s+0.2s*$i;
+                                }
+                            };
+                            
+    
+                        }
+                    }; 
+                    
+                }
+            }
+        }
+    }
 }

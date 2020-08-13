@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 body {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-weight: 400;
   font-family: "Noto Sans TC", sans-serif;
   margin: 0;
 }
 
 .circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #91D0EB;
   cursor: pointer;
   width: 60px;
@@ -18,23 +23,32 @@ body {
   position: fixed;
   bottom: 30px;
   right: 15px;
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  transition: -webkit-transform 200ms ease-in-out;
   transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
   outline: none;
   z-index: 100;
 }
 
 .circle:hover {
-  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .icon-elements {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   background-color: white;
   width: 30px;
   height: 22px;
   border-radius: 3px;
   position: relative;
+  -webkit-transition: width 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: width 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
   transition: transform 200ms ease-in-out, width 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, width 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
 }
 
 .icon-elements:before {
@@ -45,19 +59,22 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  transform: skewY(49deg) rotate(-70deg);
+  -webkit-transform: skewY(49deg) rotate(-70deg);
+          transform: skewY(49deg) rotate(-70deg);
 }
 
 .js-icon-active {
   background-color: white;
   width: 2px;
   height: 30px;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .js-icon-active:before {
   background: white;
-  transform: skew(0deg) rotate(0deg);
+  -webkit-transform: skew(0deg) rotate(0deg);
+          transform: skew(0deg) rotate(0deg);
   height: 2px;
   width: 30px;
   top: 14px;
@@ -66,13 +83,15 @@ body {
 
 .modal-wrapper {
   background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
   width: 300px;
   height: 400px;
   position: fixed;
   right: 20px;
   opacity: 0;
   bottom: 80px;
+  -webkit-transition: opacity 200ms ease-out,bottom 200ms ease-out;
   transition: opacity 200ms ease-out,bottom 200ms ease-out;
   border-radius: 15px;
   overflow: hidden;
@@ -82,9 +101,11 @@ body {
   background-color: #91d0ebc5;
   width: 100%;
   height: 60px;
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   text-align: center;
-  box-shadow: 2px 5px 10px 3px rgba(117, 117, 117, 0.2);
+  -webkit-box-shadow: 2px 5px 10px 3px rgba(117, 117, 117, 0.2);
+          box-shadow: 2px 5px 10px 3px rgba(117, 117, 117, 0.2);
 }
 
 .modal-header .title {
@@ -183,6 +204,18 @@ body {
   font-size: 14px;
   font-weight: 300;
   border-radius: 5px;
+}
+
+input::-webkit-input-placeholder {
+  color: #CACEDB;
+}
+
+input:-ms-input-placeholder {
+  color: #CACEDB;
+}
+
+input::-ms-input-placeholder {
+  color: #CACEDB;
 }
 
 input::placeholder {
