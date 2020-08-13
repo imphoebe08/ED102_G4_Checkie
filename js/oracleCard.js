@@ -37,12 +37,23 @@ function doFirst(){
         },2500);
 
         
-       
       });
       new fullpage('#fullpage',{
         autoScrolling:true,
         navigation:true,
       });
-    }
 
+
+      
+    }
     window.addEventListener('load',doFirst);
+
+
+
+    let scrollDown = document.querySelector('#btn');
+    scrollDown.addEventListener('click',function(e){
+      
+    });
+
+  
+
