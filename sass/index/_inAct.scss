@@ -104,7 +104,7 @@ $space:300px;
                                 display: flex;
                                 align-items: center;
                                 .inAct-date_icon{
-                                    background-image: url("../../img/icon/clock.png");
+                                    background-image: url("../img/icon/clock.png");
                                     @include bg;
                                     @include icon
                                     opacity: 0.5;
@@ -120,13 +120,13 @@ $space:300px;
                                 align-items: center;
 
                                 .inAct-icon_1{
-                                    background-image: url("../../img/icon/share.png");
+                                    background-image: url("../img/icon/share.png");
                                     @include bg;
                                     @include icon;
                                     margin-right: 5px;//
                                 }
                                 .inAct-icon_2{
-                                    background-image: url("../../img/icon/bookmark.png");
+                                    background-image: url("../img/icon/bookmark.png");
                                     @include icon
                                 }
                             }
@@ -146,7 +146,7 @@ $space:300px;
 
                             .inAct-location_icon{
                                 align-self: center;
-                                background-image: url("../image/index/inAct/icon/place.png");
+                                background-image: url("../img/icon/place.png");
                                 @include icon;
 
                             }

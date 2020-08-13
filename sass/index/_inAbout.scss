@@ -55,7 +55,7 @@
                         }
                         .inAbout-btn_icon{
                             @include icon;
-                            background-image: url("../../img/icon/select_down.png");
+                            background-image: url("../img/icon/select_down.png");
                             position: absolute;
                             right: 20px;
                             top: 50%;
@@ -105,13 +105,13 @@
                             transform: translateY(-50%);
                         }
                         .inAbout-icon_place{
-                            background-image: url("../../img/icon/place.png");
+                            background-image: url("../img/icon/place.png");
                         }
                         .inAbout-icon_clock{
-                            background-image: url("../../img/icon/clock.png");
+                            background-image: url("../img/icon/clock.png");
                         }
                         .inAbout-icon_tel{
-                            background-image: url("../../img/icon/tel.png");
+                            background-image: url("../img/icon/tel.png");
                         }
                     }
                 }
