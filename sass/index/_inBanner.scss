@@ -57,28 +57,67 @@
     }
     .inBanner_cImg{
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
         @include bg;
-        background-image: url("../img/index/inBanner/shapedoctor1.png");
+        // background-image: url("../img/index/inBanner/fullwhite.png");
         width: 100%;
         height: 100%;
         background-position: 90% 0;
-        // background-color: red;
-        display: none;
-    }
-    @keyframes dash {
-        to {
-          stroke-dashoffset: 0;
+        overflow: hidden;
+        .inBanner-fix_img{
+            position: absolute;
+            @include bg;
+            width: 100%;
+            height: 100%;
+            background-image: url("../img/index/inBanner/doctor.png");
+            background-position: 90% 0;
+            opacity: 0;
         }
-      }
+        .inBanner-fly_block{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            div{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include bg;
+                background-position: 90% 0;
+
+            }
+            .inBanner-fly_item_1{
+                background-image: url("../img/index/inBanner/apart1.png");
+            }
+            .inBanner-fly_item_2{
+                background-image: url("../img/index/inBanner/apart3.png");
+
+            }
+            .inBanner-fly_item_3{
+                background-image: url("../img/index/inBanner/apart5.png");
+
+            }
+            .inBanner-fly_item_4{
+                background-image: url("../img/index/inBanner/apart2.png");
+
+            }
+            .inBanner-fly_item_5{
+                background-image: url("../img/index/inBanner/apart4.png");
+
+            }
+            .inBanner-fly_item_6{
+                background-image: url("../img/index/inBanner/apart6.png");
+            }
+        }
+    }
+    
     .inBanner-logo_block{
         width: 40   0px;
         height: 250px;
         position: absolute;
-        left: 20%;
-        top: 50%;
+        left: 10%;
+        top: 60%;
         // *{
         //     border: 1px solid black;
         // }
@@ -90,19 +129,21 @@
                     linearGradient{
 
                         stop{
-                            stop-color: transparent!important;
+                            stop-opacity: 0;
                         }
                     }
-                }
-                path{
-                    fill: none;
                 }
             }
             svg{
                 width: 150px;
                 height: 150px;
                 g{
+                    linearGradient{
 
+                        stop{
+                            stop-opacity: 1;
+                        }
+                    }
                     @for $i  from 1 through 3 {
                         #SVGID_#{$i}_{
                             @for $a  from 1 through 3{
@@ -114,6 +155,7 @@
     
                         }
                     }; 
+                    
                 }
                 
             }
