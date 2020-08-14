@@ -1,3 +1,33 @@
+Vue.component('cscounselor-layout', {
+    template: `<li class="csCounselor-card">
+                    <div class="csCounselor-image">
+                        <img class="img-responsive"
+                            src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
+                    </div>
+                    <p class="csC-doctor__name">吳醫師</p>
+                    <p class="csC-type_title">醫師專長</p>
+                    <div class="csC-type_tag row">
+                        <span class="col-4">憂鬱</span>
+                        <span class="col-4">失眠</span>
+                    </div>
+                    <div class="csC-doctor__info">
+                        <ul class="csC-doctor__list">
+                            <li>
+                                <p class="js-list-toggle">經歷</p>
+                                <ul class="csS-list js-item-toggle">
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科病房主任</li>
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科主治醫師</li>
+                                    <li class="small"><i class="fas fa-circle"></i>國家衛生研究院台灣成癮次專科醫師訓練</li>
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科臨床研究員醫師</li>
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科總醫師</li>
+                                    <li class="small"><i class="fas fa-circle"></i>新光醫院精神科住院醫師</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+</li>`,
+})
+
 let vm = new Vue({
     el: "#app",
     data: {
