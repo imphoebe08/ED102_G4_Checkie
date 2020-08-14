@@ -1596,6 +1596,13 @@ div.inCs div.first div img {
      object-fit: contain;
 }
 
+div.inCs div.first .inConselor__chart {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  height: 80%;
+}
+
 div.inCs div.second {
   border-radius: 20px;
   overflow: hidden;
@@ -1638,11 +1645,6 @@ div.inCs div.second .list-wrapper li .csS-list li i {
   padding-right: 5px;
   vertical-align: middle;
   color: #65b391;
-}
-
-div.inCs .inConselor__chart {
-  border: 1px solid #FFA492;
-  background: white;
 }
 
 div.inCs button {

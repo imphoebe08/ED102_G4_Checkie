@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js'></script>
     <title>index</title>
     <style type="text/css">
         .st0 {
@@ -175,14 +176,14 @@
     <!-- 諮商師卡片開始 -->
     <h1 class="inSc-h1">諮商師介紹</h1>
     <div class="inCs">
-        
+
         <div id="person1" class="first point1">
             <div>
                 <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
             </div>
 
             <div class="inConselor__chart">
-                <canvas id="myChart" width="200" height="200"></canvas>
+                <canvas class="myChart" width="150" height="150"></canvas>
             </div>
             <button>立即預約</button>
         </div>
@@ -214,7 +215,7 @@
                 <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
             </div>
             <div class="inConselor__chart">
-                <canvas id="myChart" width="200" height="200"></canvas>
+                <canvas class="myChart" width="150" height="150"></canvas>
             </div>
             <button>立即預約</button>
         </div>
@@ -246,7 +247,7 @@
                 <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
             </div>
             <div class="inConselor__chart">
-                <canvas id="myChart" width="200" height="200"></canvas>
+                <canvas class="myChart" width="150" height="150"></canvas>
             </div>
             <button>立即預約</button>
         </div>
@@ -278,7 +279,7 @@
                 <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
             </div>
             <div class="inConselor__chart">
-                <canvas id="myChart" width="200" height="200"></canvas>
+                <canvas class="myChart" width="150" height="150"></canvas>
             </div>
             <button>立即預約</button>
         </div>
@@ -310,7 +311,7 @@
                 <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
             </div>
             <div class="inConselor__chart">
-                <canvas id="myChart" width="200" height="200"></canvas>
+                <canvas class="myChart" width="150" height="150"></canvas>
             </div>
             <button>立即預約</button>
         </div>
@@ -342,7 +343,7 @@
                 <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
             </div>
             <div class="inConselor__chart">
-                <canvas id="myChart" width="200" height="200"></canvas>
+                <canvas class="myChart" width="150" height="150"></canvas>
             </div>
             <button>立即預約</button>
         </div>
@@ -468,6 +469,48 @@
                     $(jsItem[i]).slideToggle();
                 });
             }
+        })();
+
+
+        // 諮商師雷達圖
+        (function () {
+
+            let ctx = document.getElementsByClassName("myChart");
+
+            let datas = {
+                labels: ["Coding", "Swimming", "Eating", "Cycling", "Sleeping"],
+                datasets: [{
+                    label: "分數",
+                    data: [60, 40, 50, 52, 75],
+                }]
+            };
+
+            let option = {
+                legend: {
+                    display: 0,
+                    labels: {
+                        fontColor: "rgb(255, 99, 132)"
+                    }
+                },
+                scale: {
+                    angleLines: {
+                        display: false
+                    },
+                    ticks: {
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            };
+
+            for (let i = 0; i < ctx.length; i++) {
+                new Chart(ctx[i].getContext("2d"), {
+                    type: "radar",
+                    data: datas,
+                    options: option,
+                });
+            }
+
         })();
     </script>
     <!-- 諮商師卡片結束 -->

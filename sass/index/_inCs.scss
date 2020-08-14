@@ -32,6 +32,12 @@ div.inCs {
                 object-fit: contain;
             }
         }
+        .inConselor__chart{
+            display: block;
+            margin: 0 auto;
+            width: 60%;
+            height: 80%;
+        }
     }
 
     div.second {
@@ -75,11 +81,6 @@ div.inCs {
                 }
             }
         }
-    }
-
-    .inConselor__chart {
-        border: 1px solid $color-pink;
-        background: white;
     }
 
     button {
