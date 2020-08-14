@@ -47,8 +47,6 @@ function move_box() {
 
 };
 
-
-
 $(window).scroll(function(){
     move_box();
 })
