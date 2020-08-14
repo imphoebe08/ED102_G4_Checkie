@@ -1171,6 +1171,7 @@ p {
   position: absolute;
   width: 100%;
   height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .inBanner .inBanner_cImg .inBanner-fly_block div {

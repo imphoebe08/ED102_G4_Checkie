@@ -101,9 +101,9 @@
             y:200,
             opacity:0,
             ease: Power1.ease0ut,
-            }).to('.inBanner-fly_block:nth-child(1)',1,{
-                clipPath: polygon(0 0, 14% 0, 18% 100%, 0% 100%),
-                ease: Power1.ease0ut,
+            }).to('.inBanner-fly_block:nth-child(1)',0,{
+                transition: "all 1s linear",
+                clipPath:"polygon(0% 0%, 0 0%, 0 100%, 0% 100%)",
             });
             // 第二個飛入後淡出
             timeline_2.from('.inBanner-fly_block:nth-child(2)', 2, {
@@ -111,13 +111,15 @@
             y:-200,
             opacity:0,
             ease: Power1.ease0ut,
-            }).to('.inBanner-fly_block:nth-child(2)',1,{
-                clipPath: polygon(0 0, 14% 0, 18% 100%, 0% 100%);
-                ease: Power1.ease0ut,
+            }).to('.inBanner-fly_block:nth-child(2)',0,{
+                transition: "all 1s linear",
+                clipPath:"polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+
+
             });
 
-            TweenMax.to('.inBanner-fix_img', 2, {
-            delay:2,
+            TweenMax.to('.inBanner-fix_img', 1, {
+            delay:2.2,
             opacity:1,
             });
         })
