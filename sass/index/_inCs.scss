@@ -1,0 +1,190 @@
+.inSc-h1 {
+    @include title;
+    display: block;
+    margin: 300px auto -250px;
+    max-width: 208px;
+}
+
+div.inCs {
+    max-width: 1200px;
+    margin: 300px auto 0;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    flex-flow: nowrap row;
+    perspective: 500px;
+
+
+    div.first {
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: white;
+
+        div {
+            width: 100%;
+            height: 50%;
+
+            img {
+                height: 100%;
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    div.second {
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: white;
+
+        .list-wrapper {
+            background: white;
+            width: 100%;
+            margin: 0;
+            padding: 0 5px;
+            text-align: left;
+
+            li {
+                margin: 12px 0 0;
+                list-style: none;
+
+                p {
+                    cursor: pointer;
+                    font-weight: 700;
+                }
+
+                .csS-list {
+                    width: 100%;
+                    padding: 0;
+
+                    li {
+                        display: inline-block;
+                        width: 100%;
+
+                        i {
+                            display: inline-block;
+                            font-size: 10px;
+                            transform: scale(0.8);
+                            padding-right: 5px;
+                            vertical-align: middle;
+                            color: rgb(101, 179, 145);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .inConselor__chart {
+        border: 1px solid $color-pink;
+        background: white;
+    }
+
+    button {
+        height: 50px;
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        margin: 10px;
+        display: inline-block;
+        @include btn-more(80px, $color-pink, $fontsize);
+        width: 120px;
+        border-radius: $border-radius - 20px;
+    }
+
+    div.left {
+        border: 1px solid $color-pink;
+        width: 250px;
+        height: 400px;
+        position: absolute;
+        left: -20%;
+        top: 50%;
+        transform-style: preserve-3d;
+        transform: translate(-50%, -50%) translateZ(-200px);
+        text-align: center;
+
+        &.move {
+            animation: moveToMiddleLeft 1s linear forwards;
+            z-index: 50;
+        }
+
+        &.front {
+            z-index: 40;
+        }
+    }
+
+    div.right {
+        border: 1px solid $color-pink;
+        width: 250px;
+        height: 400px;
+        position: absolute;
+        right: -20%;
+        top: 50%;
+        transform-style: preserve-3d;
+        transform: translate(50%, -50%) translateZ(-200px);
+        text-align: center;
+
+        &.move {
+            animation: moveToMiddleRight 1s linear forwards;
+            z-index: 50;
+        }
+
+        &.front {
+            z-index: 40;
+        }
+    }
+}
+
+ul.inSc-slide-button {
+    display: flex;
+    flex-flow: nowrap row;
+    position: absolute;
+    bottom: -80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    display: none;
+
+    li.point {
+        width: 20px;
+        height: 20px;
+        border: 3px solid black;
+        margin: 0 20px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+
+        &.activeNow {
+            background: $color-pink;
+        }
+    }
+}
+
+@keyframes moveToMiddleLeft {
+    0% {
+        left: -20%;
+        z-index: 50;
+    }
+
+    100% {
+        left: 50%;
+        transform: translate(-100%, -50%) translateZ(0px);
+        z-index: 50;
+    }
+}
+
+@keyframes moveToMiddleRight {
+    0% {
+        right: -20%;
+        z-index: 50;
+    }
+
+    100% {
+        right: 50%;
+        transform: translate(100%, -50%) translateZ(0px);
+        z-index: 50;
+    }
+}
