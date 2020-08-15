@@ -10,19 +10,13 @@ $( ".hamburger" ).click(function() {
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
-    /*var x = window.matchMedia("(min-width: 768px)");*/
-    /*if (x.matches) { }*/
     
-        if (scroll >= 800) {
-            $(".top").addClass("top--scrolling");
-            $(".navbar__item").addClass("navbar__item--scrolling");
-            $(".navbar__sign__item").addClass("navbar__sign__item--scrolling");
-            $(".hamburger-inner").addClass("hamburger-inner--scrolling");
+    
+        if (scroll >= 80) {
+            $(".top").addClass("top--scrolling");    
         } else {
             $(".top").removeClass("top--scrolling");
-            $(".navbar__item").removeClass("navbar__item--scrolling");
-            $(".navbar__sign__item").removeClass("navbar__sign__item--scrolling");
-            $(".hamburger-inner").removeClass("hamburger-inner--scrolling");
+            
         }
 
     
