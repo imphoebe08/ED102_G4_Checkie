@@ -7,24 +7,24 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/chatbot.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/nav.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/signup.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/header.css"/>
     <link rel="stylesheet" type="text/css" href="./css/chatbot.css"/>
 
 </head>
 
 <body>
-    <!------導覽列------>
+<!------導覽列------>
+<header>
     <div class="top">
         <div class="navbar">
             <a href="" class="navbar__item logo"><img src="./img/navbar/cklogo.png" alt class="desktop_logo"><img src="./img/navbar/cklogo2.png" alt class="mobile_logo"></a>
             <div class="navbar__menu">
-                    <a class="navbar__item navbar__link" href="./csMain.html">預約諮詢</a>
-                    <a class="navbar__item navbar__link" href="">線上諮商</a>
-                    <a class="navbar__item navbar__link" href="./acMain.html">活動報名</a>
-                    <a class="navbar__item navbar__link" href="./atMain.html">專欄文章</a>
-                    <a class="navbar__item navbar__link" href="./oracleCard.html">神諭卡</a>
-                    <a class="navbar__item navbar__link" href="">心理評估測驗</a>
+                <a class="navbar__item navbar__link" href="csMain.html">預約諮詢</a>
+                <a class="navbar__item navbar__link" href="">線上諮商</a>
+                <a class="navbar__item navbar__link" href="acMain.html">活動報名</a>
+                <a class="navbar__item navbar__link" href="atMain.html">專欄文章</a>
+                <a class="navbar__item navbar__link" href="oracleCard.html">神諭卡</a>
+                <a class="navbar__item navbar__link" href="test.html">心理評估測驗</a>
 
             </div>
 
@@ -83,7 +83,8 @@
         </div>
     </div>
 
-    <!--------Chatbot-------->
+    <!------ chatbot ------>
+
     <button class="circle" type="button">
         
         <span class="icon-elements">
@@ -91,10 +92,10 @@
     </button>
     <div class="modal-wrapper">
         
-        <header class="modal-header">
+        <div class="modal-header">
             <span class="title">Checkie線上客服</span>
             <p>您好！很高興為您服務</p>
-        </header>
+        </div>
 
         <div class="modal-chatbox">
             <span class="reply" data-time="14:22">您好！歡迎使用Checkie，請問有什麼可以協助您的？</span>
@@ -109,17 +110,9 @@
         </div>
         </form>
     </div>
+</header>
+
     
-    <!--------Footer-------->
-
-    <div class="main">
-        
-    </div>
-
-    <div class="paragraph">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto ea dignissimos sint distinctio cupiditate veritatis id quasi earum! Non, inventore sapiente velit deserunt vel nihil consectetur magnam officiis quaerat sed modi neque, praesentium a assumenda fuga consequatur reprehenderit. Aut illum enim itaque officiis laboriosam non cupiditate, veritatis delectus nam aliquam.</p>
-    </div>
-
     
 </body>
 </html>

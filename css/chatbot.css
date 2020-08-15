@@ -34,6 +34,12 @@ body {
   height: 22px;
   border-radius: 3px;
   position: relative;
+<<<<<<< HEAD
+=======
+  top: 15px;
+  -webkit-transition: width 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: width 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+>>>>>>> 3712fa45cf8e6a57352afd9c85fba75214d494ca
   transition: transform 200ms ease-in-out, width 200ms ease-in-out;
 }
 
@@ -76,6 +82,8 @@ body {
   transition: opacity 200ms ease-out,bottom 200ms ease-out;
   border-radius: 15px;
   overflow: hidden;
+  display: none;
+  z-index: 99;
 }
 
 .modal-header {
@@ -123,7 +131,7 @@ body {
 }
 
 .modal-chatbox {
-  height: 275px;
+  height: 280px;
   padding: 10px;
   font-size: 12px;
   font-weight: 500;
@@ -172,14 +180,14 @@ body {
 .modal-inputbox {
   display: inline-block;
   width: 100%;
-  margin: 5px;
+  margin: 15px 5px;
 }
 
 .modal-input {
   display: inline-block;
   width: 240px;
   height: 30px;
-  border-top: 1px solid #E6E7F0;
+  border: 1px solid #E6E7F0;
   font-size: 14px;
   font-weight: 300;
   border-radius: 5px;
@@ -204,7 +212,7 @@ input::placeholder {
 }
 
 .js-modal-active {
-  visibility: visible;
+  display: block;
   opacity: 1;
   bottom: 100px;
 }

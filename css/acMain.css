@@ -158,7 +158,6 @@ body {
 }
 
 .acBanner {
-  border: 1px solid blue;
   width: 100vw;
   max-height: 480px;
   overflow: hidden;
