@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 * {
-  outline: 1px solid red;
   text-decoration: none;
   margin: 0 auto;
 }
@@ -68,8 +67,8 @@
 .atContent .atContent-left_detail, .atContent .atContent-conter_detail {
   width: 100%;
   height: 20px;
-  margin-top: 3%;
-  margin-bottom: 1%;
+  margin-top: 4%;
+  margin-bottom: 2%;
   display: flex;
   color: rgba(179, 178, 178, 0.867);
 }
@@ -174,7 +173,7 @@
 
 .atContent-left_pic, .atContent-conter_pic {
   height: 10.4vw;
-  margin-top: 2.2vw;
+  margin-top: 3.2vw;
   overflow: hidden;
 }
 
@@ -375,5 +374,38 @@
   transform: scaleX(0.0001) translateX(100%);
   transform-origin: left center;
   transition: all 1s linear;
+}
+
+.atClassAfter .atClassAfter_content_block:nth-child(even) .atClassAfter_content {
+  height: 500px;
+  margin: auto;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.atClassAfter .atClassAfter_content_block:nth-child(even) .atClassAfter_content .atClassAfter-content_text {
+  width: 50%;
+  opacity: 0;
+  transform: translate(-50%, 10px);
+  transition: all .3s;
+}
+
+.atClassAfter .atClassAfter_content_block:nth-child(even) .atClassAfter_content .atClassAfter-content_pic {
+  width: 40%;
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  transform-origin: right center;
+  transition: all 1s linear;
+  clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+}
+
+.atClassAfter .atClassAfter_content_block:nth-child(even) .atClassAfter_content .atClassAfter-content_pic img {
+  width: 700px;
 }
 /*# sourceMappingURL=atMain.css.map */
