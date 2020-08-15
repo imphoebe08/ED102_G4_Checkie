@@ -1533,6 +1533,7 @@ p {
 .inBanner .inBanner-logo_block .inBanner-logo svg g linearGradient:nth-child(5) stop:nth-child(3) {
   -webkit-transition-delay: 1.75s;
           transition-delay: 1.75s;
+<<<<<<< HEAD
 }
 
 .inSc-h1 {
@@ -1806,5 +1807,7 @@ ul.inSc-slide-button li.point.activeNow {
             transform: translate(100%, -50%) translateZ(0px);
     z-index: 50;
   }
+=======
+>>>>>>> sponge
 }
 /*# sourceMappingURL=index.css.map */
