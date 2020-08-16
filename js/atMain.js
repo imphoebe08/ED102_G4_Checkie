@@ -1,10 +1,17 @@
 var i = 0;
+$(function(){
+    $(".atBanner-box_pic>img").css("transform",`translateY(-150px)`)
+
+})
 function move_box() {
     var atBox_top = $(".atBox").offset().top;
     var move_right = $(".atBox_Class>a").width()
     ,win_scroll = $(window).scrollTop(),
-    hWin=$(window).height(),atClassTitle_top=$(".atClassTitle").offset().top;
-
+    hWin=$(window).height(),atClassTitle_top=$(".atClassTitle").offset().top,
+    banner=$(".atBanner").offset().top,
+    banner_dis=win_scroll-banner;
+    $(".atBanner-box_pic>img").css("transform",`translateY(${-150+banner_dis*-0.5}px)`)
+    
     var move_right = $(".atBox_Class>a").width(),
     win_scroll = $(window).scrollTop(),
     hWin=$(window).height(),
