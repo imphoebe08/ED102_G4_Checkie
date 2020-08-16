@@ -1533,7 +1533,6 @@ p {
 .inBanner .inBanner-logo_block .inBanner-logo svg g linearGradient:nth-child(5) stop:nth-child(3) {
   -webkit-transition-delay: 1.75s;
           transition-delay: 1.75s;
-<<<<<<< HEAD
 }
 
 .inSc-h1 {
@@ -1546,7 +1545,7 @@ p {
       align-self: center;
   position: relative;
   display: block;
-  margin: 300px auto -250px;
+  margin: 0 auto;
   max-width: 208px;
 }
 
@@ -1562,252 +1561,291 @@ p {
 }
 
 div.inCs {
+  width: 100%;
+  height: calc(100vh - 150px);
   max-width: 1200px;
-  margin: 300px auto 0;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: nowrap row;
-          flex-flow: nowrap row;
-  -webkit-perspective: 500px;
-          perspective: 500px;
+  margin: 0 auto;
 }
 
-div.inCs div.first {
-  border-radius: 20px;
+div.inCs ul.leftList {
+  height: 65vh;
+  width: 40%;
+  max-width: 400px;
+  min-width: 160px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
   overflow: hidden;
-  background-color: white;
+  border-radius: 1rem 0 0 1rem;
 }
 
-div.inCs div.first div {
+div.inCs ul.leftList li {
   width: 100%;
-  height: 50%;
-}
-
-div.inCs div.first div img {
   height: 100%;
-  max-width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  background: white;
 }
 
-div.inCs div.first .inConselor__chart {
+div.inCs ul.leftList li img {
+  display: block;
+  width: 100%;
+  height: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+}
+
+div.inCs ul.leftList li.move {
+  -webkit-animation: leftToCenter 1s ease-in-out both;
+          animation: leftToCenter 1s ease-in-out both;
+  z-index: 50;
+}
+
+div.inCs ul.leftList li h5 {
+  width: 100%;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  padding: 0 10px;
+}
+
+div.inCs ul.leftList li h5:after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 2px;
+  background: #91D0EB;
+}
+
+div.inCs ul.leftList li p {
+  font-size: 16px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  line-height: 2;
+  line-height: 1.5rem;
+  padding: 0 10px 20px;
+}
+
+div.inCs ul.leftList li .inConselor__chart {
   display: block;
   margin: 0 auto;
-  width: 60%;
   height: 80%;
 }
 
-div.inCs div.second {
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: white;
-}
-
-div.inCs div.second .list-wrapper {
-  background: white;
-  width: 100%;
-  margin: 0;
-  padding: 0 5px;
-  text-align: left;
-}
-
-div.inCs div.second .list-wrapper li {
-  margin: 12px 0 0;
-  list-style: none;
-}
-
-div.inCs div.second .list-wrapper li p {
-  cursor: pointer;
-  font-weight: 700;
-}
-
-div.inCs div.second .list-wrapper li .csS-list {
-  width: 100%;
-  padding: 0;
-}
-
-div.inCs div.second .list-wrapper li .csS-list li {
-  display: inline-block;
-  width: 100%;
-}
-
-div.inCs div.second .list-wrapper li .csS-list li i {
-  display: inline-block;
-  font-size: 10px;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-  padding-right: 5px;
-  vertical-align: middle;
-  color: #65b391;
-}
-
-div.inCs button {
-  height: 50px;
+div.inCs ul.leftList li h1 {
   position: absolute;
-  bottom: 0%;
+  bottom: 20%;
+  right: 5%;
+  font-size: 40px;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+}
+
+div.inCs ul.leftList li button {
+  position: absolute;
+  bottom: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   margin: 10px;
-  display: inline-block;
-  width: 80px;
+  width: 120px;
   padding: 10px 10px;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
   text-align: center;
   border-radius: 30px;
   border: 2px solid #FFA492;
-  color: #FFA492;
+  color: #fff;
   cursor: pointer;
-  background-color: transparent;
+  background-color: #FFA492;
   -webkit-transition: .2s all ease-in;
   transition: .2s all ease-in;
+}
+
+div.inCs ul.leftList li button:hover {
+  background-color: transparent;
+  color: #FFA492;
+}
+
+div.inCs ul.rightList {
+  height: 65vh;
+  width: 40%;
+  max-width: 400px;
+  min-width: 160px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(100%, -50%);
+          transform: translate(100%, -50%);
+  overflow: hidden;
+  border-radius: 0 1rem 1rem 0;
+}
+
+div.inCs ul.rightList li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  background: white;
+}
+
+div.inCs ul.rightList li img {
+  display: block;
+  width: 100%;
+  height: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+}
+
+div.inCs ul.rightList li.move {
+  -webkit-animation: rightToCenter 1s ease-in-out both;
+          animation: rightToCenter 1s ease-in-out both;
+  z-index: 50;
+}
+
+div.inCs ul.rightList li h5 {
+  width: 100%;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  padding: 0 10px;
+}
+
+div.inCs ul.rightList li h5:after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 2px;
+  background: #91D0EB;
+}
+
+div.inCs ul.rightList li p {
+  font-size: 16px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  line-height: 2;
+  line-height: 1.5rem;
+  padding: 0 10px 20px;
+}
+
+div.inCs ul.rightList li .inConselor__chart {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  height: 70%;
+}
+
+div.inCs ul.rightList li h1 {
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+  font-size: 40px;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+}
+
+div.inCs ul.rightList li button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  margin: 10px;
   width: 120px;
-  border-radius: 10px;
-}
-
-div.inCs button:hover {
-  background-color: #FFA492;
+  padding: 10px 10px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 30px;
+  border: 2px solid #FFA492;
   color: #fff;
+  cursor: pointer;
+  background-color: #FFA492;
+  -webkit-transition: .2s all ease-in;
+  transition: .2s all ease-in;
 }
 
-div.inCs div.left {
-  border: 1px solid #FFA492;
-  width: 250px;
-  height: 400px;
-  position: absolute;
-  left: -20%;
-  top: 50%;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: translate(-50%, -50%) translateZ(-200px);
-          transform: translate(-50%, -50%) translateZ(-200px);
-  text-align: center;
+div.inCs ul.rightList li button:hover {
+  background-color: transparent;
+  color: #FFA492;
 }
 
-div.inCs div.left.move {
-  -webkit-animation: moveToMiddleLeft 1s linear forwards;
-          animation: moveToMiddleLeft 1s linear forwards;
-  z-index: 50;
-}
-
-div.inCs div.left.front {
-  z-index: 40;
-}
-
-div.inCs div.right {
-  border: 1px solid #FFA492;
-  width: 250px;
-  height: 400px;
-  position: absolute;
-  right: -20%;
-  top: 50%;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: translate(50%, -50%) translateZ(-200px);
-          transform: translate(50%, -50%) translateZ(-200px);
-  text-align: center;
-}
-
-div.inCs div.right.move {
-  -webkit-animation: moveToMiddleRight 1s linear forwards;
-          animation: moveToMiddleRight 1s linear forwards;
-  z-index: 50;
-}
-
-div.inCs div.right.front {
-  z-index: 40;
-}
-
-ul.inSc-slide-button {
+div.inCs ul.slide-button {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: nowrap row;
           flex-flow: nowrap row;
   position: absolute;
-  bottom: -80%;
+  bottom: -10%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   list-style: none;
-  display: none;
 }
 
-ul.inSc-slide-button li.point {
+div.inCs ul.slide-button li.point {
   width: 20px;
   height: 20px;
   border: 3px solid black;
-  margin: 0 20px;
+  margin: 0 10px;
   border-radius: 50%;
   background: #ccc;
   cursor: pointer;
 }
 
-ul.inSc-slide-button li.point.activeNow {
-  background: #FFA492;
+div.inCs ul.slide-button li.point.activeNow {
+  background: red;
 }
 
-@-webkit-keyframes moveToMiddleLeft {
-  0% {
-    left: -20%;
-    z-index: 50;
+@-webkit-keyframes leftToCenter {
+  from {
+    left: -100%;
   }
-  100% {
-    left: 50%;
-    -webkit-transform: translate(-100%, -50%) translateZ(0px);
-            transform: translate(-100%, -50%) translateZ(0px);
-    z-index: 50;
+  to {
+    left: 0%;
   }
 }
 
-@keyframes moveToMiddleLeft {
-  0% {
-    left: -20%;
-    z-index: 50;
+@keyframes leftToCenter {
+  from {
+    left: -100%;
   }
-  100% {
-    left: 50%;
-    -webkit-transform: translate(-100%, -50%) translateZ(0px);
-            transform: translate(-100%, -50%) translateZ(0px);
-    z-index: 50;
+  to {
+    left: 0%;
   }
 }
 
-@-webkit-keyframes moveToMiddleRight {
-  0% {
-    right: -20%;
-    z-index: 50;
+@-webkit-keyframes rightToCenter {
+  from {
+    right: -100%;
   }
-  100% {
-    right: 50%;
-    -webkit-transform: translate(100%, -50%) translateZ(0px);
-            transform: translate(100%, -50%) translateZ(0px);
-    z-index: 50;
+  to {
+    right: 0%;
   }
 }
 
-@keyframes moveToMiddleRight {
-  0% {
-    right: -20%;
-    z-index: 50;
+@keyframes rightToCenter {
+  from {
+    right: -100%;
   }
-  100% {
-    right: 50%;
-    -webkit-transform: translate(100%, -50%) translateZ(0px);
-            transform: translate(100%, -50%) translateZ(0px);
-    z-index: 50;
+  to {
+    right: 0%;
   }
-=======
->>>>>>> sponge
 }
 /*# sourceMappingURL=index.css.map */
