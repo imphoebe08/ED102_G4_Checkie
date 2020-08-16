@@ -209,10 +209,15 @@
         Vue.component("first-layout", {
             props: ["myclass"],
             template: `<li :class="myclass">
-                    <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
-                    <h1>詹宗儀</h1>
-                   	<button>立即預約</button>
-               </li>`
+                    <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg"  @click="openSelfPage">
+                    <h1  @click="openSelfPage">詹宗儀</h1>
+                   	<button @click="openSelfPage">立即預約</button>
+               </li>`,
+            methods: {
+                openSelfPage() {
+                    window.open("./csSelf.html", "_self");
+                },
+            }
         });
 
         Vue.component("second-layout", {

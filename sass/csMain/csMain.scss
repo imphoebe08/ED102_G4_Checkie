@@ -104,6 +104,7 @@
             .csCounselor-image {
                 width: 100%;
                 height: 40%;
+                cursor: pointer;
 
                 img {
                     max-height: 100%;
@@ -116,6 +117,7 @@
                 text-align: center;
                 width: 100%;
                 @include h5;
+                cursor: pointer;
             }
 
             .csC-type_title {
