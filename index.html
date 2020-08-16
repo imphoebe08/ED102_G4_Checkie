@@ -173,6 +173,204 @@
         </div>
     </div>
 
+    <!-- 搜尋bar -->
+    <div class="index-search-bar" id="app1">
+        <div class="select-block">
+            <span @click="slideToggleUl">{{iMode}}</span>
+            <p>選擇你希望的諮商方式</p>
+            <ul>
+                <li v-for="(item, index) in iModes" @click="closeToggle">
+                    <input type="radio" :id="item.id" name="iMode" v-model="iMode" :value="item.value">
+                    <label :for="item.id" @click="changeWord0" v-text="item.value"></label>
+                </li>
+            </ul>
+        </div>
+        <transition name="fade" mode="out-in">
+            <div class="select-block" v-if="stage1">
+                <span @click="slideToggleUl">{{iPos}}</span>
+                <p>選擇距離您最近的位置</p>
+                <ul>
+                    <li v-for="(item, index) in iPoss" @click="closeToggle">
+                        <input type="radio" :id="item.id" name="iPos" v-model="iPos" :value="item.value">
+                        <label :for="item.id" @click="changeWord1" v-text="item.value"></label>
+                    </li>
+                </ul>
+            </div>
+        </transition>
+        <transition name="fade" mode="out-in">
+            <div class="select-block" v-if="stage2">
+                <span @click="slideToggleUl">{{iType}}</span>
+                <p>選擇離您的需求</p>
+                <ul>
+                    <li v-for="(item, index) in iTypes" @click="closeToggle">
+                        <input type="radio" :id="item.id" name="iType" v-model="iType" :value="item.value">
+                        <label :for="item.id" @click="changeWord2" v-text="item.value"></label>
+                    </li>
+                </ul>
+            </div>
+        </transition>
+        <transition name="fade" mode="out-in">
+            <div class="select-block" v-if="stage3">
+                <span @click="slideToggleUl">{{iCs}}</span>
+                <p>選擇預約諮商師</p>
+                <ul>
+                    <li v-for="(item, index) in iCss" @click="closeToggle">
+                        <input type="radio" :id="item.id" name="iCs" v-model="iCs" :value="item.value">
+                        <label :for="item.id" @click="changeWord3" v-text="item.value"></label>
+                    </li>
+                </ul>
+            </div>
+        </transition>
+    </div>
+    <script>
+        new Vue({
+            el: "#app1",
+            data: {
+                iMode: "諮商方式",
+                iModes: [{
+                        id: "iMode1",
+                        value: "語音諮商"
+                    },
+                    {
+                        id: "iMode2",
+                        value: "視訊諮商"
+                    },
+                    {
+                        id: "iMode3",
+                        value: "現場諮商"
+                    },
+                    {
+                        id: "iMode4",
+                        value: "線上諮商"
+                    }
+                ],
+                iPos: "地區",
+                iPoss: [{
+                        id: "iNorth",
+                        value: "北"
+                    },
+                    {
+                        id: "iCenter",
+                        value: "中"
+                    },
+                    {
+                        id: "iSouth",
+                        value: "南"
+                    }
+                ],
+                iType: "專業",
+                iTypes: [{
+                        id: "iType1",
+                        value: "問題一一"
+                    },
+                    {
+                        id: "iType2",
+                        value: "問題二二"
+                    },
+                    {
+                        id: "iType3",
+                        value: "問題三三"
+                    },
+                    {
+                        id: "iType4",
+                        value: "問題四四"
+                    },
+                    {
+                        id: "iType5",
+                        value: "問題五五"
+                    }
+                ],
+                iCs: "諮商師",
+                iCss: [{
+                        id: "iCs1",
+                        value: "醫師一"
+                    },
+                    {
+                        id: "iCs2",
+                        value: "醫師二"
+                    },
+                    {
+                        id: "iCs3",
+                        value: "醫師三"
+                    },
+                    {
+                        id: "iCs4",
+                        value: "醫師四"
+                    },
+                    {
+                        id: "iCs5",
+                        value: "醫師五"
+                    }
+                ],
+                stage1: false,
+                stage2: false,
+                stage3: false
+            },
+            methods: {
+                changeWord0(e) {
+                    this.iMode = e.target.innerText;
+                    this.doFirst();
+                },
+                changeWord1(e) {
+                    this.iPos = e.target.innerText;
+                    this.doFirst();
+                },
+                changeWord2(e) {
+                    this.iType = e.target.innerText;
+                    this.doFirst();
+                },
+                changeWord3(e) {
+                    this.iCs = e.target.innerText;
+                    this.doFirst();
+                },
+                doFirst() {
+                    $("span").next().next().hide();
+                },
+                slideToggleUl(e) {
+                    $("span:not(this)").next().next().hide();
+                    $(e.target).next().next().slideToggle();
+                },
+                closeToggle(e) {
+                    $(e.target).parent().slideToggle();
+                }
+            },
+            watch: {
+                iMode: function () {
+                    if (this.iMode !== "諮商方式") {
+                        if (this.iMode == "現場諮商") {
+                            this.stage1 = true;
+                            if (this.iPos == "地區") {
+                                this.stage2 = false;
+                                this.stage3 = false;
+                            } else {
+                                this.stage2 = true;
+                                this.stage3 = false;
+                            }
+                            this.iType = "專業";
+                            this.iCs = "諮商師";
+                            this.doFirst();
+                        } else {
+                            this.stage1 = false;
+                            this.stage2 = true;
+                            this.doFirst();
+                        }
+                    }
+                },
+                iPos: function () {
+                    if (this.iPos !== "地區") {
+                        this.stage2 = true;
+                        this.doFirst();
+                    }
+                },
+                iType: function () {
+                    if (this.iType !== "專業") {
+                        this.stage3 = true;
+                        this.doFirst();
+                    }
+                }
+            }
+        });
+    </script>
     <!-- 諮商師卡片開始 -->
     <h1 class="inSc-h1">諮商師介紹</h1>
     <div class="inCs" id="inCs">
