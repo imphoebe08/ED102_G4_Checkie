@@ -24,14 +24,16 @@ $(window).scroll(function() {
 
 /*sign up&sign in*/
 $(function(){
-    $("#signup_overlay").hide();
+    // $("#signup_overlay").hide();
 
     $("#signup").click(function(){
+        $("#signup_overlay").removeClass("signup_overlay-none");
         $("#signup_overlay").fadeIn(300);
         container.classList.add("right-panel-active");
     });
 
     $("#signin").click(function(){
+        $("#signup_overlay").removeClass("signup_overlay-none");
         $("#signup_overlay").fadeIn(300);
         container.classList.remove("right-panel-active");
     });
