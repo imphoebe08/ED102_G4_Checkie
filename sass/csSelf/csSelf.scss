@@ -1,4 +1,4 @@
-@import 'style';
+@import '../csMain/style';
 
 .csSelf {
     display: block;
@@ -123,6 +123,7 @@
 
             a {
                 display: block;
+                cursor: pointer;
 
                 img {
                     width: 100%;
@@ -146,6 +147,7 @@
                 line-height: 1.5em;
                 padding: 5px 0;
                 padding: 10px;
+                cursor: pointer;
             }
 
             .card-tag {

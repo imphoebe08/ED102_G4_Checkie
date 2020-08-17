@@ -1,10 +1,10 @@
 Vue.component('cscounselor-layout', {
     template: `<li class="csCounselor-card">
-                    <div class="csCounselor-image">
+                    <div class="csCounselor-image" @click="openSelfPage">
                         <img class="img-responsive"
                             src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
                     </div>
-                    <p class="csC-doctor__name">吳醫師</p>
+                    <p class="csC-doctor__name" @click="openSelfPage">吳醫師</p>
                     <p class="csC-type_title">醫師專長</p>
                     <div class="csC-type_tag row">
                         <span class="col-4">憂鬱</span>
@@ -25,7 +25,12 @@ Vue.component('cscounselor-layout', {
                             </li>
                         </ul>
                     </div>
-</li>`,
+                </li>`,
+    methods: {
+        openSelfPage() {
+            window.open("./csSelf.html", "_self");
+        }
+    }
 })
 
 let vm = new Vue({

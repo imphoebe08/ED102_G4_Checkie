@@ -173,224 +173,316 @@
         </div>
     </div>
 
+    <!-- 搜尋bar -->
+    <div class="index-search-bar" id="app1">
+        <div class="select-block">
+            <span @click="slideToggleUl">{{iMode}}</span>
+            <p>選擇你希望的諮商方式</p>
+            <ul>
+                <li v-for="(item, index) in iModes" @click="closeToggle">
+                    <input type="radio" :id="item.id" name="iMode" v-model="iMode" :value="item.value">
+                    <label :for="item.id" @click="changeWord0" v-text="item.value"></label>
+                </li>
+            </ul>
+        </div>
+        <transition name="fade" mode="out-in">
+            <div class="select-block" v-if="stage1">
+                <span @click="slideToggleUl">{{iPos}}</span>
+                <p>選擇距離您最近的位置</p>
+                <ul>
+                    <li v-for="(item, index) in iPoss" @click="closeToggle">
+                        <input type="radio" :id="item.id" name="iPos" v-model="iPos" :value="item.value">
+                        <label :for="item.id" @click="changeWord1" v-text="item.value"></label>
+                    </li>
+                </ul>
+            </div>
+        </transition>
+        <transition name="fade" mode="out-in">
+            <div class="select-block" v-if="stage2">
+                <span @click="slideToggleUl">{{iType}}</span>
+                <p>選擇離您的需求</p>
+                <ul>
+                    <li v-for="(item, index) in iTypes" @click="closeToggle">
+                        <input type="radio" :id="item.id" name="iType" v-model="iType" :value="item.value">
+                        <label :for="item.id" @click="changeWord2" v-text="item.value"></label>
+                    </li>
+                </ul>
+            </div>
+        </transition>
+        <transition name="fade" mode="out-in">
+            <div class="select-block" v-if="stage3">
+                <span @click="slideToggleUl">{{iCs}}</span>
+                <p>選擇預約諮商師</p>
+                <ul>
+                    <li v-for="(item, index) in iCss" @click="closeToggle">
+                        <input type="radio" :id="item.id" name="iCs" v-model="iCs" :value="item.value">
+                        <label :for="item.id" @click="changeWord3" v-text="item.value"></label>
+                    </li>
+                </ul>
+            </div>
+        </transition>
+    </div>
+    <script>
+        new Vue({
+            el: "#app1",
+            data: {
+                iMode: "諮商方式",
+                iModes: [{
+                        id: "iMode1",
+                        value: "語音諮商"
+                    },
+                    {
+                        id: "iMode2",
+                        value: "視訊諮商"
+                    },
+                    {
+                        id: "iMode3",
+                        value: "現場諮商"
+                    },
+                    {
+                        id: "iMode4",
+                        value: "線上諮商"
+                    }
+                ],
+                iPos: "地區",
+                iPoss: [{
+                        id: "iNorth",
+                        value: "北"
+                    },
+                    {
+                        id: "iCenter",
+                        value: "中"
+                    },
+                    {
+                        id: "iSouth",
+                        value: "南"
+                    }
+                ],
+                iType: "專業",
+                iTypes: [{
+                        id: "iType1",
+                        value: "問題一一"
+                    },
+                    {
+                        id: "iType2",
+                        value: "問題二二"
+                    },
+                    {
+                        id: "iType3",
+                        value: "問題三三"
+                    },
+                    {
+                        id: "iType4",
+                        value: "問題四四"
+                    },
+                    {
+                        id: "iType5",
+                        value: "問題五五"
+                    }
+                ],
+                iCs: "諮商師",
+                iCss: [{
+                        id: "iCs1",
+                        value: "醫師一"
+                    },
+                    {
+                        id: "iCs2",
+                        value: "醫師二"
+                    },
+                    {
+                        id: "iCs3",
+                        value: "醫師三"
+                    },
+                    {
+                        id: "iCs4",
+                        value: "醫師四"
+                    },
+                    {
+                        id: "iCs5",
+                        value: "醫師五"
+                    }
+                ],
+                stage1: false,
+                stage2: false,
+                stage3: false
+            },
+            methods: {
+                changeWord0(e) {
+                    this.iMode = e.target.innerText;
+                    this.doFirst();
+                },
+                changeWord1(e) {
+                    this.iPos = e.target.innerText;
+                    this.doFirst();
+                },
+                changeWord2(e) {
+                    this.iType = e.target.innerText;
+                    this.doFirst();
+                },
+                changeWord3(e) {
+                    this.iCs = e.target.innerText;
+                    this.doFirst();
+                },
+                doFirst() {
+                    $("span").next().next().hide();
+                },
+                slideToggleUl(e) {
+                    $("span:not(this)").next().next().hide();
+                    $(e.target).next().next().slideToggle();
+                },
+                closeToggle(e) {
+                    $(e.target).parent().slideToggle();
+                }
+            },
+            watch: {
+                iMode: function () {
+                    if (this.iMode !== "諮商方式") {
+                        if (this.iMode == "現場諮商") {
+                            this.stage1 = true;
+                            if (this.iPos == "地區") {
+                                this.stage2 = false;
+                                this.stage3 = false;
+                            } else {
+                                this.stage2 = true;
+                                this.stage3 = false;
+                            }
+                            this.iType = "專業";
+                            this.iCs = "諮商師";
+                            this.doFirst();
+                        } else {
+                            this.stage1 = false;
+                            this.stage2 = true;
+                            this.doFirst();
+                        }
+                    }
+                },
+                iPos: function () {
+                    if (this.iPos !== "地區") {
+                        this.stage2 = true;
+                        this.doFirst();
+                    }
+                },
+                iType: function () {
+                    if (this.iType !== "專業") {
+                        this.stage3 = true;
+                        this.doFirst();
+                    }
+                }
+            }
+        });
+    </script>
     <!-- 諮商師卡片開始 -->
     <h1 class="inSc-h1">諮商師介紹</h1>
     <div class="inCs" id="inCs">
-
-        <div id="person1" class="first point1">
-            <div>
-                <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
-            </div>
-
-            <div class="inConselor__chart">
-                <canvas class="myChart" width="150" height="150"></canvas>
-            </div>
-            <button>立即預約</button>
-        </div>
-        <div id="person2" class="second point1">
-            <incscard-layout2></incscard-layout2>
-        </div>
-        <div id="person3" class="first point2">
-            <div>
-                <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
-            </div>
-            <div class="inConselor__chart">
-                <canvas class="myChart" width="150" height="150"></canvas>
-            </div>
-            <button>立即預約</button>
-        </div>
-        <div id="person4" class="second point2">
-            <incscard-layout2></incscard-layout2>
-        </div>
-        <div id="person5" class="first point3">
-            <div>
-                <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
-            </div>
-            <div class="inConselor__chart">
-                <canvas class="myChart" width="150" height="150"></canvas>
-            </div>
-            <button>立即預約</button>
-        </div>
-        <div id="person6" class="second point3">
-            <incscard-layout2></incscard-layout2>
-        </div>
-        <div id="person7" class="first point4">
-            <div>
-                <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
-            </div>
-            <div class="inConselor__chart">
-                <canvas class="myChart" width="150" height="150"></canvas>
-            </div>
-            <button>立即預約</button>
-        </div>
-        <div id="person8" class="second point4">
-            <incscard-layout2></incscard-layout2>
-        </div>
-        <div id="person9" class="first point5">
-            <div>
-                <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
-            </div>
-            <div class="inConselor__chart">
-                <canvas class="myChart" width="150" height="150"></canvas>
-            </div>
-            <button>立即預約</button>
-        </div>
-        <div id="person10" class="second point5">
-            <incscard-layout2></incscard-layout2>
-        </div>
-        <div id="person11" class="first point6">
-            <div>
-                <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg">
-            </div>
-            <div class="inConselor__chart">
-                <canvas class="myChart" width="150" height="150"></canvas>
-            </div>
-            <button>立即預約</button>
-        </div>
-        <div id="person12" class="second point6">
-            <incscard-layout2></incscard-layout2>
-        </div>
+        <ul class="leftList">
+            <first-layout myclass="leftLi move"></first-layout>
+            <second-layout myclass="leftLi"></second-layout>
+            <first-layout myclass="leftLi"></first-layout>
+            <second-layout myclass="leftLi"></second-layout>
+            <first-layout myclass="leftLi"></first-layout>
+            <second-layout myclass="leftLi"></second-layout>
+            <first-layout myclass="leftLi"></first-layout>
+        </ul>
+        <ul class="rightList">
+            <second-layout myclass="rightLi move"></second-layout>
+            <first-layout myclass="rightLi"></first-layout>
+            <second-layout myclass="rightLi"></second-layout>
+            <first-layout myclass="rightLi"></first-layout>
+            <second-layout myclass="rightLi"></second-layout>
+            <first-layout myclass="rightLi"></first-layout>
+            <second-layout myclass="rightLi"></second-layout>
+        </ul>
+        <ul class="slide-button">
+            <li class="point activeNow" id="point1"></li>
+            <li class="point" id="point2"></li>
+            <li class="point" id="point3"></li>
+            <li class="point" id="point4"></li>
+            <li class="point" id="point5"></li>
+            <li class="point" id="point6"></li>
+            <li class="point" id="point7"></li>
+        </ul>
     </div>
-    <ul class="inSc-slide-button">
-        <li class="point" id="point1"></li>
-        <li class="point" id="point2"></li>
-        <li class="point" id="point3"></li>
-        <li class="point" id="point4"></li>
-        <li class="point" id="point5"></li>
-        <li class="point" id="point6"></li>
-    </ul>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script>
-        Vue.component('incscard-layout2', {
-            template: `
-            <ul class="list-wrapper">
-                <li>
-                    <p class="js-list-toggle">經歷</p>
-                    <ul class="csS-list js-item-toggle">
-                        <li class="small"><i class="fas fa-circle"></i>新光醫院精神科病房主任</li>
-                        <li class="small"><i class="fas fa-circle"></i>新光醫院精神科主治醫師</li>
-                        <li class="small"><i class="fas fa-circle"></i>國家衛生研究院台灣成癮次專科醫師訓練</li>
-                        <li class="small"><i class="fas fa-circle"></i>新光醫院精神科臨床研究員醫師</li>
-                        <li class="small"><i class="fas fa-circle"></i>新光醫院精神科總醫師</li>
-                        <li class="small"><i class="fas fa-circle"></i>新光醫院精神科住院醫師</li>
-                    </ul>
-                </li>
-
-                <li>
-                    <p class="js-list-toggle">學歷</p>
-                    <ul class="csS-list js-item-toggle">
-                        <li class="small"><i class="fas fa-circle"></i>台大醫學院腦與心智科學研究所碩士</li>
-                        <li class="small"><i class="fas fa-circle"></i>台北醫學大學醫學系醫學士</li>
-                    </ul>
-                </li>
-            </ul>        `,
-        })
-
-        let vm = new Vue({
-            el: "#inCs",
+        Vue.component("first-layout", {
+            props: ["myclass"],
+            template: `<li :class="myclass">
+                    <img src="https://www.hospital.fju.edu.tw/Media/DoctorPhoto/00186%20.jpg"  @click="openSelfPage">
+                    <h1  @click="openSelfPage">詹宗儀</h1>
+                   	<button @click="openSelfPage">立即預約</button>
+               </li>`,
+            methods: {
+                openSelfPage() {
+                    window.open("./csSelf.html", "_self");
+                },
+            }
         });
 
-        let first = document.getElementsByClassName("first");
-        let second = document.getElementsByClassName("second");
-        let point = document.getElementsByClassName("point");
+        Vue.component("second-layout", {
+            props: ["myclass"],
+            template: `<li :class="myclass">
+					<h5>認識諮商師</h5>
+					<p>能夠在治療室裡真實地陪伴每個靈魂之外，也是希望能在行有餘力時，盡可能地透過演講或團體的方式，讓沒機會走進治療室的人可以有一個或者有一次被好好看見與照顧的經驗。</p>
+					<h5>治療專業</h5>
+					<div class="inConselor__chart">
+						<canvas class="myChart" width="200" height="200"></canvas>
+					</div>
+				</li>`
+        });
 
-        for (i = 0; i < first.length; i++) {
-            if (i % 2 == 0) {
-                first[i].classList.add("left");
-                second[i].classList.add("right");
-            } else {
-                first[i].classList.add("right");
-                second[i].classList.add("left");
-            }
-        }
+        new Vue({
+            el: "#inCs"
+        });
+        // ========================================
+        // slider
+        // ========================================
 
-        let left = document.getElementsByClassName("left");
-        let right = document.getElementsByClassName("right");
-        document.querySelectorAll(`.point1`)[0].classList.add("move");
-        document.querySelectorAll(`.point1`)[1].classList.add("move");
-        document.querySelector(`#point1`).classList.add("activeNow");
-
-        for (let i = 0; i < point.length; i++) {
-            point[i].addEventListener("click", csCardShow);
-        }
-
-        setInterval(changePoint, 5000);
-
-        function changePoint() {
+        function move() {
             if (document.querySelector(".activeNow").nextElementSibling == null) {
-                point[0].classList.add("activeNow");
-                document.querySelectorAll(".activeNow")[1].classList.remove("activeNow");
-                changeCard();
+                $("li.point").removeClass("activeNow");
+                $("li.point:nth-child(1)").addClass("activeNow");
+                $("li.leftLi").removeClass("move");
+                $("li.rightLi").removeClass("move");
+                $("li.leftLi:nth-child(1)").addClass("move");
+                $("li.rightLi:nth-child(1)").addClass("move");
             } else {
-                document
-                    .querySelector(".activeNow")
-                    .nextElementSibling.classList.add("activeNow");
-                document.querySelector(".activeNow").classList.remove("activeNow");
-                changeCard();
-                setTimeout(function () {
-                    console.log("wait");
-                }, 12000);
+                $(".activeNow").next().addClass("activeNow");
+                $(".activeNow").prev().removeClass("activeNow");
+                $(".move").next().addClass("move");
+                $(".move").prev().removeClass("move");
             }
         }
 
-        function changeCard() {
-            let targetSlide = document
-                .querySelectorAll(".activeNow")[0]
-                .getAttribute("id");
-            for (let i = 0; i < point.length; i++) {
-                left[i].classList.remove("move");
-                right[i].classList.remove("move");
-            }
-            document.querySelectorAll(`.${targetSlide}`)[0].classList.add("move");
-            document.querySelectorAll(`.${targetSlide}`)[1].classList.add("move");
+        function clickChange(e) {
+            $("li.point").removeClass("activeNow");
+            $(this).addClass("activeNow");
+            $("li.leftLi").removeClass("move");
+            $("li.rightLi").removeClass("move");
 
-            for (let i = 0; i < point.length; i++) {
-                left[i].classList.remove("front");
-                right[i].classList.remove("front");
-            }
-
-            if (targetSlide == `point6`) {
-                document.querySelectorAll(`.point1`)[0].classList.add("front");
-                document.querySelectorAll(`.point1`)[1].classList.add("front");
-            } else {
-                document
-                    .querySelectorAll(`.${targetSlide}`)[1]
-                    .nextElementSibling.classList.add("front");
-                document
-                    .querySelectorAll(`.${targetSlide}`)[1]
-                    .nextElementSibling.nextElementSibling.classList.add("front");
-            }
-        }
-
-        function csCardShow(e) {
-            for (let i = 0; i < point.length; i++) {
-                point[i].classList.remove("activeNow");
-            }
-            e.target.classList.add("activeNow");
-            changeCard();
+            let index = $("li.activeNow").attr("id").split("point")[1];
+            $(`li.leftLi:nth-child(${index})`).addClass("move");
+            $(`li.rightLi:nth-child(${index})`).addClass("move");
         }
 
         (function () {
-            let jsList = document.getElementsByClassName("js-list-toggle");
-            let jsItem = document.getElementsByClassName("js-item-toggle");
-            for (let i = 0; i < jsList.length; i++) {
-                jsList[i].addEventListener("click", function () {
-                    $(jsItem[i]).slideToggle();
-                });
+            let point = $("li.point");
+            for (let i = 0; i < point.length; i++) {
+                point[i].addEventListener("click", clickChange);
             }
+
+            setInterval(move, 5000);
         })();
 
+        // ========================================
+        // radar.chart
+        // ========================================
 
-        // 諮商師雷達圖
         (function () {
-
-            let ctx = document.getElementsByClassName("myChart");
-
             let datas = {
                 labels: ["Coding", "Swimming", "Eating", "Cycling", "Sleeping"],
                 datasets: [{
                     label: "分數",
-                    data: [60, 40, 50, 52, 75],
+                    data: [60, 40, 50, 52, 75]
                 }]
             };
 
@@ -412,14 +504,16 @@
                 }
             };
 
-            for (let i = 0; i < ctx.length; i++) {
-                new Chart(ctx[i].getContext("2d"), {
+            let ctx = [];
+            let myChart = [];
+            for (let i = 0; i < $(".myChart").length; i++) {
+                ctx[i] = $(".myChart")[i].getContext("2d");
+                myChart[i] = new Chart(ctx[i], {
                     type: "radar",
                     data: datas,
-                    options: option,
+                    options: option
                 });
             }
-
         })();
     </script>
     <!-- 諮商師卡片結束 -->
