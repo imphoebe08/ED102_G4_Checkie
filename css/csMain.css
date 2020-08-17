@@ -616,6 +616,7 @@ body {
 .csCounselor-cards .csCounselor-gallery .csCounselor-card .csCounselor-image {
   width: 100%;
   height: 40%;
+  cursor: pointer;
 }
 
 .csCounselor-cards .csCounselor-gallery .csCounselor-card .csCounselor-image img {
@@ -630,6 +631,7 @@ body {
   font-size: 24px;
   line-height: 1.5;
   letter-spacing: 1.5px;
+  cursor: pointer;
 }
 
 .csCounselor-cards .csCounselor-gallery .csCounselor-card .csC-type_title {
