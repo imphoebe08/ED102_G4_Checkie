@@ -69,6 +69,9 @@ Vue.component('cssart-layout', {
     methods: {
         openArtPage() {
             window.open("./atSelf.html", "_self");
+        },
+        openOrderPage() {
+            window.open("./coCalender.html", "_self");
         }
     }
 })
