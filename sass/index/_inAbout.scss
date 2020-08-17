@@ -36,6 +36,7 @@
             .inAbout-text_body{
                 width: 50%;
                 margin: auto;
+                z-index: 2;
                 .inAbout-text{
                     @include p;
                 }

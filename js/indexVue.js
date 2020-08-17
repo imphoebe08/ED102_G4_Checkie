@@ -47,11 +47,13 @@
                     let nowNum = this.about_nowNum;
                     this.about_nowNum = this.about_Num2;
                     this.about_Num2 = nowNum;
+                    this.select=false;
                 },
                 changeAboutNum3(){
                     let nowNum = this.about_nowNum;
                     this.about_nowNum = this.about_Num3;
                     this.about_Num3 = nowNum;
+                    this.select=false;
                 },
             }
         })
@@ -115,7 +117,7 @@
             methods:{
 
             },
-        })
+        });
         // Banner
         new Vue({
             el:"#inBanner",
@@ -126,4 +128,43 @@
                 }
             },
 
+        });
+        // inArti
+        new Vue({
+            el:"#inArti",
+            date:{
+
+            },
+            components:{
+                "inarti-item":{
+                    // 要有一個主標籤
+                    template:`
+            <a href="javascript:void(0)">
+                <article>
+                    <div class="inArti-left_pic1">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="inArti-left_detail">
+                        <div class="inArti-left-detail_block">
+                            <div class="inArti-left-detail_pic"><img src="#" ></div>
+                            <div class="inArti-left-detail_text">留佩萱醫師</div>
+
+                        </div>
+                        <div class="inArti-left-detail_title">家庭關係</div>
+                    </div>
+                    <div class="inArti-left_border1"></div>
+                    <div class="inArti-left_title">
+                        <h2>受傷的童年，受創的大腦</h2>
+                    </div>
+                    <div class="inArti-left_partner">
+                        ACE研究是在1990年左右由美國醫師等人所做的研究，當時研究了17,000多個對象，想要探討童年的創傷經驗和成人時期的健康之間的關聯性。當時的研究結果非常的驚人受試的研究對象中...
+                    </div>
+                   
+                </article>
+            </a>
+                    `,
+                },
+                
+
+            },
         })

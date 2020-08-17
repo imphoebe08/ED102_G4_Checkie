@@ -8,7 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+    <script src="./js/index.js"></script>
     <title>index</title>
     <style type="text/css">
         .st0{fill:url(#SVGID_1_);}
@@ -17,121 +21,14 @@
     </style>
 </head>
 <body>
-    <!-- 活動滾動視差 -->
-    <script>
-        
-        $(function(){
-            var win = $(window),
-            hWin = win.height(),
-            inAct = $("#inAct").offset().top,
-            inArti =$(".inArti").offset().top,
-
-            inAct_block_w =$(".inAct_block").width(),
-            inAct_block_p = $(".inAct_block").css("paddingLeft"),
-            inAct_body_w =$(".inAct_body").width(),
-            // inAct_block 最多往左的距離
-            distance = parseInt(inAct_block_w) - parseInt(inAct_body_w) + parseInt(inAct_block_p);
-            Scroll();
-            win.scroll(function(){
-                Scroll();
-            })
-            function Scroll(){
-                var scroll = $(window).scrollTop(),
-                // 現在滾動條變化
-                scroll_distance = scroll - inAct,
-                trs = (scroll_distance  / (inArti - inAct - hWin))*distance;
-                if(scroll > inAct){
-                    $(".inAct_block").css("transform",`translateX(-${trs}px)`)
-                }
-            }
-            //結束
-            
-        })
-    </script>
-    <!-- 神諭卡進場 -->
-    <script>
-    $(function(){
-        card()
-    })
-    $(window).scroll(function(){
-        card()
-    })
-    function card(){
-        var win = $(window),
-        hWin = win.height(),
-        scroll = $(window).scrollTop(),
-        Cstart = $(".inCard").offset().top;
-        if(scroll > Cstart - hWin*0.8){
-            $(".inCard_body>div").addClass("move")
-            for(var i = 1;i<13;i++){
-                const animation = document.querySelector(`.inCard_body>div:nth-child(${i})`);
-                animation.addEventListener('transitionend', function(){
-                    animation.classList.add("move2")
-                });
-            }
-        }
-    }
-    </script>
-    <!-- about 輪播 -->
-    <script>
-        $(function(){
-            var i = 2;
-            setInterval(function(){
-                $(`.inAbout-right_block>div`).removeClass("inAbout-show")
-                $(`.inAbout-right_block>div:nth-child(${i})`).addClass("inAbout-show")
-                i++;
-                if(i==3){
-                    i-=2;
-                }
-            },5000)
-        })
-	</script>
-	<!-- 首頁輪播 -->
-    <script>
-		$(function(){
-            // ck字體特效
-            $(".inBanner-logo>svg").removeClass("inBanner-hide_svg");
-            // 飛入特效
-            var timeline_1 = new TimelineMax();
-            var timeline_2 = new TimelineMax();
-            // 飛入
-            // 第一個飛入後淡出
-            timeline_1.from('.inBanner-fly_block:nth-child(1)', 2, {
-            x: 200,
-            y:200,
-            opacity:0,
-            ease: Power1.ease0ut,
-            }).to('.inBanner-fly_block:nth-child(1)',0,{
-                transition: "all 1s linear",
-                clipPath:"polygon(0% 0%, 0 0%, 0 100%, 0% 100%)",
-            });
-            // 第二個飛入後淡出
-            timeline_2.from('.inBanner-fly_block:nth-child(2)', 2, {
-            x: -200,
-            y:-200,
-            opacity:0,
-            ease: Power1.ease0ut,
-            }).to('.inBanner-fly_block:nth-child(2)',0,{
-                transition: "all 1s linear",
-                clipPath:"polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-
-
-            });
-
-            TweenMax.to('.inBanner-fix_img', 1, {
-            delay:2.2,
-            opacity:1,
-            });
-        })
-    </script>
     <div class="inBanner" id="inBanner">
 		<!-- 背景圖圈圈 -->
 		<div class="inBanner_bgImg">
 			<div class="inBanner-big_circle"></div>
-			<div class="inBanner-circle_1"></div>
-			<div class="inBanner-circle_2"></div>
-			<div class="inBanner-circle_3"></div>
-			<div class="inBanner-circle_4"></div>
+			<div class="inBanner-circle_1 inBanner-circle"></div>
+			<div class="inBanner-circle_2 inBanner-circle"></div>
+			<div class="inBanner-circle_3 inBanner-circle"></div>
+			<div class="inBanner-circle_4 inBanner-circle"></div>
         </div>
         <!-- 飛入特效 -->
         <div class="inBanner_cImg">
@@ -190,51 +87,19 @@
             </div>
         </div>
     </div>
-    
 
-    <div class="inAct" id="inAct">
-        <div class="inAct_move"></div>
-        <div class="inAct_body">
-            <div class="inAct-sticky_block">
-                <h1>活動講座</h1>
-                <div class="inAct_block">
-                    <!-- vue -->
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                </div>
+    <div class="inArti" id="inArti">
+        <div class="inArti_left">
+            <inArti-item v-for="num in 5"></inArti-left-item>
+        </div>
+        <div class="inArti_conter">
+            <div class="inArti-conterbox">
+           <inArti-item v-for="num in 3"></inArti-left-item>
             </div>
         </div>
-    </div>
-    <div class="inArti" id="inArti">
-		<h1>專欄文章</h1>
-		<div class="inArti_block">
-			<div class="inArti-left_block">
-				<div class="inArti-text_block">
-					<img :src="Arti.img">
-					<div class="inArti-category_block">
-						<div class="inArti-category_left">
-							<img :src="Arti.AuthorImg">
-							<div class="inArti_CounselorNam">{{Arti.author}}</div>
-							<div class="inArti_date">{{Arti.date}}</div>
-						</div>
-						<div class="inArti-category_right">
-							<div class="inArti-category_text">{{Arti.category}}</div>
-						</div>
-					</div>
-					<div class="inArti_title">{{Arti.title}}</div>
-					<div class="inArti_content">{{Arti.content}}</div>
-				</div>
-
-			</div>
-			<div class="inArti-right_block">
-
-			</div>
-		</div>
-
+        <div class="inArti_right">
+            <inArti-item v-for="num in 4"></inArti-left-item>
+        </div>
     </div>
     <div class="inCard" id="inCard">
         <div class="inCard_text">透過神諭卡，看看當下最需要的訊息</div>
@@ -261,21 +126,8 @@
                 <div> 
                     <div></div>
                 </div>
-                <div> 
-                    <div></div>
-                </div>
-                <div> 
-                    <div></div>
-                </div>
-                <div> 
-                    <div></div>
-                </div>
-                <div> 
-                    <div></div>
-                </div>
-                <div> 
-                    <div></div>
-                </div>
+                
+                
         </div>
     </div>
     <div class="inAbout" id="inAbout">
@@ -291,7 +143,6 @@
 						<div class="inAbout-place_block" @click="list">
 							<div class="inAbout-btn_text">{{about[about_nowNum].area}}區</div>
 							<div class="inAbout-btn_icon" ></div>
-
 						</div>
                         <div class="inAbout-ano_place" v-show="select" >
 							<!-- 點擊時將自己的NUM與NOWNUM交換 -->
@@ -299,7 +150,6 @@
                             <div class="inAbout_ano" @click="changeAboutNum3">{{about[about_Num3].area}}區</div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <div class="inAbout-area_block">
@@ -365,7 +215,7 @@
         </div>
     </div>
     <!-- 神諭卡canvas -->
-    <script>
+    <!-- <script>
         let scene, camera, renderer, ribbon
 
         const container = document.querySelector('#inCard')
@@ -498,10 +348,8 @@
         init()
         animate()
 
-    </script>
+    </script> -->
 	<script src="./js/indexVue.js"></script>
-
-    
 </body>
 
 </html>

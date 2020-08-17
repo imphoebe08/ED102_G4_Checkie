@@ -263,16 +263,6 @@ p {
   float: right;
 }
 
-.litter {
-  height: 1000px;
-  background-color: black;
-}
-
-.inArti {
-  height: 1000px;
-  background-color: blue;
-}
-
 .inAct {
   padding-top: 300px;
 }
@@ -438,6 +428,12 @@ p {
   opacity: 0.7;
 }
 
+@media all and (max-width: 767px) {
+  .inAct .inAct_body .inAct-sticky_block {
+    overflow-x: scroll;
+  }
+}
+
 .inCard {
   width: 100%;
   margin: 0 auto;
@@ -458,17 +454,15 @@ p {
 
 .inCard .inCard_text {
   position: absolute;
-  top: 55%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 36px;
-  line-height: 1.5;
-  letter-spacing: 1.5px;
+  font-size: 16px;
 }
 
 .inCard > a {
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 120px;
@@ -500,8 +494,8 @@ p {
 }
 
 .inCard .inCard_body > div {
-  width: 600px;
-  height: 150px;
+  width: 350px;
+  height: 80px;
   position: absolute;
   top: 50%;
   right: 50%;
@@ -559,161 +553,151 @@ p {
   transition: all 2.3s linear;
 }
 
-.inCard .inCard_body > div.move:nth-child(9) {
-  transform: rotate(90deg);
-  transition: all 2.4s linear;
-}
-
-.inCard .inCard_body > div.move:nth-child(10) {
-  transform: rotate(90deg);
-  transition: all 2.5s linear;
-}
-
-.inCard .inCard_body > div.move:nth-child(11) {
-  transform: rotate(90deg);
-  transition: all 2.6s linear;
-}
-
-.inCard .inCard_body > div.move:nth-child(12) {
-  transform: rotate(90deg);
-  transition: all 2.7s linear;
-}
-
 @keyframes rotate1 {
   100% {
-    transform: rotate(120deg);
+    transform: rotate(141.42857deg);
   }
 }
 
 @keyframes rotate2 {
   100% {
-    transform: rotate(150deg);
+    transform: rotate(192.85714deg);
   }
 }
 
 @keyframes rotate3 {
   100% {
-    transform: rotate(180deg);
+    transform: rotate(244.28571deg);
   }
 }
 
 @keyframes rotate4 {
   100% {
-    transform: rotate(210deg);
+    transform: rotate(295.71429deg);
   }
 }
 
 @keyframes rotate5 {
   100% {
-    transform: rotate(240deg);
+    transform: rotate(347.14286deg);
   }
 }
 
 @keyframes rotate6 {
   100% {
-    transform: rotate(270deg);
+    transform: rotate(398.57143deg);
   }
 }
 
 @keyframes rotate7 {
   100% {
-    transform: rotate(300deg);
-  }
-}
-
-@keyframes rotate8 {
-  100% {
-    transform: rotate(330deg);
-  }
-}
-
-@keyframes rotate9 {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate10 {
-  100% {
-    transform: rotate(390deg);
-  }
-}
-
-@keyframes rotate11 {
-  100% {
-    transform: rotate(420deg);
+    transform: rotate(450deg);
   }
 }
 
 .inCard .inCard_body > div.move.move2:nth-child(1) {
-  animation-name: rotate11;
-  animation-duration: 2.6s;
-  animation-fill-mode: forwards;
-}
-
-.inCard .inCard_body > div.move.move2:nth-child(2) {
-  animation-name: rotate10;
-  animation-duration: 2.5s;
-  animation-fill-mode: forwards;
-}
-
-.inCard .inCard_body > div.move.move2:nth-child(3) {
-  animation-name: rotate9;
-  animation-duration: 2.4s;
-  animation-fill-mode: forwards;
-}
-
-.inCard .inCard_body > div.move.move2:nth-child(4) {
-  animation-name: rotate8;
-  animation-duration: 2.3s;
-  animation-fill-mode: forwards;
-}
-
-.inCard .inCard_body > div.move.move2:nth-child(5) {
   animation-name: rotate7;
   animation-duration: 2.2s;
   animation-fill-mode: forwards;
 }
 
-.inCard .inCard_body > div.move.move2:nth-child(6) {
+.inCard .inCard_body > div.move.move2:nth-child(2) {
   animation-name: rotate6;
   animation-duration: 2.1s;
   animation-fill-mode: forwards;
 }
 
-.inCard .inCard_body > div.move.move2:nth-child(7) {
+.inCard .inCard_body > div.move.move2:nth-child(3) {
   animation-name: rotate5;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 
-.inCard .inCard_body > div.move.move2:nth-child(8) {
+.inCard .inCard_body > div.move.move2:nth-child(4) {
   animation-name: rotate4;
   animation-duration: 1.9s;
   animation-fill-mode: forwards;
 }
 
-.inCard .inCard_body > div.move.move2:nth-child(9) {
+.inCard .inCard_body > div.move.move2:nth-child(5) {
   animation-name: rotate3;
   animation-duration: 1.8s;
   animation-fill-mode: forwards;
 }
 
-.inCard .inCard_body > div.move.move2:nth-child(10) {
+.inCard .inCard_body > div.move.move2:nth-child(6) {
   animation-name: rotate2;
   animation-duration: 1.7s;
   animation-fill-mode: forwards;
 }
 
-.inCard .inCard_body > div.move.move2:nth-child(11) {
+.inCard .inCard_body > div.move.move2:nth-child(7) {
   animation-name: rotate1;
   animation-duration: 1.6s;
   animation-fill-mode: forwards;
 }
 
-.inCard .inCard_body > div.move.move2:nth-child(12) {
+.inCard .inCard_body > div.move.move2:nth-child(8) {
   transform: rotate(90deg);
   transition: all 1.5s linear;
+}
+
+.inCard .inCard_body > div.move.move2:nth-child(1) > div {
+  animation: float 14s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.inCard .inCard_body > div.move.move2:nth-child(2) > div {
+  animation: float 14s linear infinite;
+  animation-delay: 1s;
+}
+
+.inCard .inCard_body > div.move.move2:nth-child(3) > div {
+  animation: float 14s linear infinite;
+  animation-delay: 1.5s;
+}
+
+.inCard .inCard_body > div.move.move2:nth-child(4) > div {
+  animation: float 14s linear infinite;
+  animation-delay: 2s;
+}
+
+.inCard .inCard_body > div.move.move2:nth-child(5) > div {
+  animation: float 14s linear infinite;
+  animation-delay: 2.5s;
+}
+
+.inCard .inCard_body > div.move.move2:nth-child(6) > div {
+  animation: float 14s linear infinite;
+  animation-delay: 3s;
+}
+
+.inCard .inCard_body > div.move.move2:nth-child(7) > div {
+  animation: float 14s linear infinite;
+  animation-delay: 3.5s;
+}
+
+.inCard .inCard_body > div.move.move2:nth-child(8) > div {
+  animation: float 14s linear infinite;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(8px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 .inAbout {
@@ -762,6 +746,7 @@ p {
 .inAbout .inAbout-left_block .inAbout-text_block .inAbout-text_body {
   width: 50%;
   margin: auto;
+  z-index: 2;
 }
 
 .inAbout .inAbout-left_block .inAbout-text_block .inAbout-text_body .inAbout-text {
@@ -1288,5 +1273,124 @@ p {
   letter-spacing: 1.5px;
   font-weight: bold;
   padding-left: 10px;
+}
+
+.inArti {
+  margin: auto;
+  max-width: 1200px;
+  display: flex;
+}
+
+.inArti > div {
+  z-index: 2;
+}
+
+.inArti > div a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  color: black;
+}
+
+.inArti > div a:hover .inArti-left_title h2 {
+  color: #FFA492;
+}
+
+.inArti > div a:hover .inArti-left_border1::before {
+  width: 100%;
+}
+
+.inArti > div a article {
+  width: 90%;
+  margin: auto;
+}
+
+.inArti > div a article > div {
+  width: 100%;
+}
+
+.inArti > div a article .inArti-left_pic1 img {
+  width: 100%;
+}
+
+.inArti > div a article .inArti-left_detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inArti > div a article .inArti-left_detail .inArti-left-detail_block {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.inArti > div a article .inArti-left_detail .inArti-left-detail_block .inArti-left_partner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.inArti > div a article .inArti-left_detail .inArti-left-detail_block .inArti-left_partner img {
+  width: 100%;
+}
+
+.inArti > div a article .inArti-left_detail .inArti-left-detail_block .inArti-left-detail_text {
+  font-size: 16px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  line-height: 2;
+  font-size: 16px;
+}
+
+.inArti > div a article .inArti-left_detail .inArti-left-detail_title {
+  font-size: 16px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  line-height: 2;
+}
+
+.inArti > div a article .inArti-left_border1 {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  position: relative;
+}
+
+.inArti > div a article .inArti-left_border1::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  transition: all .2s linear;
+  background-color: #FFA492;
+}
+
+.inArti > div a article .inArti-left_title h2 {
+  font-size: 36px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+}
+
+.inArti > div a article .inArti-left_partner {
+  font-size: 16px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  line-height: 2;
+}
+
+.inArti .inArti_left, .inArti .inArti_conter {
+  width: 25%;
+  border-right: 1px solid #ddd;
+}
+
+.inArti .inArti_conter .inArti-conterbox {
+  position: sticky;
+  top: 0;
+}
+
+.inArti .inArti_right {
+  width: 50%;
 }
 /*# sourceMappingURL=index.css.map */

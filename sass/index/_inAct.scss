@@ -34,16 +34,7 @@ $space:300px;
 
     }
 }
-.litter{
-    height: 1000px;
-    background-color: black;
 
-}
-.inArti{
-    height: 1000px;
-    background-color: blue;
-
-}
 .inAct{
     padding-top: $space;
     
@@ -168,4 +159,13 @@ $space:300px;
 
     }
     
+}
+@media all and (max-width :767px) {
+    .inAct{
+        .inAct_body {
+            .inAct-sticky_block {
+                overflow-x: scroll;
+            }
+        } 
+    }
 }
