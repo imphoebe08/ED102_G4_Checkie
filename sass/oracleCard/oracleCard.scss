@@ -131,12 +131,11 @@ p{
                     ol{
                         display: flex;
                         width: 100%;
-                        // flex-flow: wrap row;
                         justify-content: center;
                         margin: auto;
 
                         li{
-                            width: 200px;
+                            width: 250px;
                             margin: 0 50px;
                             border: 1px solid #333;
                             padding: 40px 10px 30px;
@@ -161,6 +160,7 @@ p{
 
                             h4{
                                 margin-bottom: 20px;
+                                display: block;
                             }
 
                             p{
@@ -171,7 +171,7 @@ p{
                     }
                 }
 
-                .btn{
+                .cardBtn{
                     width: 100%;
                     margin: auto;
                     bottom: 20px;
@@ -452,3 +452,18 @@ p{
     }
 }
 
+
+// @media screen and(max-width: 980px) {
+//     .oracleCardStep{
+//         .oracleCardStepBox{
+//             .step{
+//                 ol{
+//                     li{
+//                         width: 300px;
+//                         background-color: #333;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
