@@ -69,12 +69,17 @@ Vue.component('cssart-layout', {
     methods: {
         openArtPage() {
             window.open("./atSelf.html", "_self");
-        }
+        },
     }
 })
 
 
 
 let vm = new Vue({
-    el: "#app"
+    el: "#app",
+    methods: {
+        openOrderPage() {
+            window.open("./coCheck.html", "_self");
+        }
+    }
 })
