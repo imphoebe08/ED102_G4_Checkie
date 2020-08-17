@@ -79,7 +79,7 @@ let vm = new Vue({
     el: "#app",
     methods: {
         openOrderPage() {
-            window.open("./coCalender.html", "_self");
+            window.open("./coCheck.html", "_self");
         }
     }
 })
