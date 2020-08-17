@@ -629,6 +629,7 @@ body {
 
 .csSelf .csS-art .csS-art__card a {
   display: block;
+  cursor: pointer;
 }
 
 .csSelf .csS-art .csS-art__card a img {
@@ -653,6 +654,7 @@ body {
   line-height: 1.5em;
   padding: 5px 0;
   padding: 10px;
+  cursor: pointer;
 }
 
 .csSelf .csS-art .csS-art__card .card-tag {
