@@ -35,25 +35,22 @@ function doFirst(){
             $('.item').off('click');
         });
         },2500);
-
         
       });
       new fullpage('#fullpage',{
+        anchors: ['page1', 'page2', 'page3'],
         autoScrolling:true,
         navigation:true,
       });
-
-
+      $(document).on('click', '#cardBtn', function(){
+        fullpage_api.moveTo('page3', 1);
+      });
       
     }
-    window.addEventListener('load',doFirst);
 
-
-
-    let scrollDown = document.querySelector('#btn');
-    scrollDown.addEventListener('click',function(e){
-      
-    });
+  window.addEventListener('load',doFirst);
+  
+ 
 
   
 

@@ -229,7 +229,7 @@ p {
 }
 
 #oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .step ol li {
-  width: 200px;
+  width: 250px;
   margin: 0 50px;
   border: 1px solid #333;
   padding: 40px 10px 30px;
@@ -256,6 +256,7 @@ p {
 
 #oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .step ol li h4 {
   margin-bottom: 20px;
+  display: block;
 }
 
 #oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .step ol li p {
@@ -263,7 +264,7 @@ p {
   text-align: left;
 }
 
-#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .btn {
+#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .cardBtn {
   width: 100%;
   margin: auto;
   bottom: 20px;
@@ -271,7 +272,7 @@ p {
   position: relative;
 }
 
-#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .btn::before, #oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .btn::after {
+#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .cardBtn::before, #oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .cardBtn::after {
   cursor: pointer;
   content: '';
   display: inline-block;
@@ -290,7 +291,7 @@ p {
           animation: downDown1 2s infinite ease-in-out;
 }
 
-#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .btn::after {
+#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .cardBtn::after {
   bottom: -65px;
   -webkit-animation: downDown2 2s infinite ease-in-out;
           animation: downDown2 2s infinite ease-in-out;
@@ -344,7 +345,7 @@ p {
   }
 }
 
-#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .btn button {
+#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .cardBtn button {
   width: 120px;
   padding: 10px 10px;
   font-size: 16px;
@@ -359,11 +360,11 @@ p {
   transition: .2s all ease-in;
 }
 
-#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .btn button:focus {
+#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .cardBtn button:focus {
   display: none;
 }
 
-#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .btn button:hover {
+#oracleCard .oracleCardInner .oracleCardStep .oracleCardStepBox .cardBtn button:hover {
   background-color: transparent;
   color: #FFA492;
 }
@@ -723,5 +724,12 @@ p {
 
 #oracleCard .oracleCardInner .oracleCardStepOne .oracleCardStepOneBox .cards .item.middle {
   left: 50%;
+}
+
+@media screen and (max-width: 980px) {
+  .oracleCardStep .oracleCardStepBox .step ol li {
+    width: 300px;
+    background-color: #333;
+  }
 }
 /*# sourceMappingURL=oracleCard.css.map */
