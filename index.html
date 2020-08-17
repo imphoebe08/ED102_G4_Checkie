@@ -9,6 +9,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+    <script src="./js/index.js"></script>
     <title>index</title>
     <style type="text/css">
         .st0 {
@@ -113,15 +119,28 @@
             <div class="inBanner-circle_2"></div>
             <div class="inBanner-circle_3"></div>
             <div class="inBanner-circle_4"></div>
+    <div class="inBanner" id="inBanner">
+		<!-- 背景圖圈圈 -->
+		<div class="inBanner_bgImg">
+			<div class="inBanner-big_circle"></div>
+			<div class="inBanner-circle_1 inBanner-circle"></div>
+			<div class="inBanner-circle_2 inBanner-circle"></div>
+			<div class="inBanner-circle_3 inBanner-circle"></div>
+			<div class="inBanner-circle_4 inBanner-circle"></div>
         </div>
         <!-- 飛入特效 -->
         <div class="inBanner_cImg">
-            <div class="inBanner-fly_item">
-
+            <div class="inBanner-fly_block">
+                <div class="inBanner-fly_item_1"></div>
+                <div class="inBanner-fly_item_2"></div>
+                <div class="inBanner-fly_item_3"></div>
             </div>
-            <div class="inBanner-fly_item">
-
+            <div class="inBanner-fly_block">
+                <div class="inBanner-fly_item_4"></div>
+                <div class="inBanner-fly_item_5"></div>
+                <div class="inBanner-fly_item_6"></div>
             </div>
+            <div class="inBanner-fix_img"></div>
         </div>
         <!-- logo 特校 -->
         <div class="inBanner-logo_block">
@@ -165,7 +184,7 @@
                         c0.4,0.5,0.8,0.9,1.2,1.3l36.8,35.6c10,10,10,26.4,0,36.3l-2.6,2.6C218.7,204,202.3,204,192.3,194z" />
                     </g>
                 </svg>
-
+                <span class="inBanner-logo_text">CHECKIE</span>
             </div>
             <div class="inBanner_text">
                 {{inBanner.text}}
@@ -518,67 +537,46 @@
     </script>
     <!-- 諮商師卡片結束 -->
 
-    <div class="inAct" id="inAct">
-        <div class="inAct_move"></div>
-        <div class="inAct_body">
-            <div class="inAct-sticky_block">
-                <h1>活動講座</h1>
-                <div class="inAct_block">
-                    <!-- vue -->
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                    <inact-item></inact-item>
-                </div>
+    <div class="inArti" id="inArti">
+        <div class="inArti_left">
+            <inArti-item v-for="num in 5"></inArti-left-item>
+        </div>
+        <div class="inArti_conter">
+            <div class="inArti-conterbox">
+           <inArti-item v-for="num in 3"></inArti-left-item>
             </div>
         </div>
+        <div class="inArti_right">
+            <inArti-item v-for="num in 4"></inArti-left-item>
+        </div>
     </div>
-    
-    <div class="inArti" id="inArti">
-
-
     <div class="inCard" id="inCard">
         <div class="inCard_text">透過神諭卡，看看當下最需要的訊息</div>
         <a href="javascript:void:(0)">抽取今日神諭卡</a>
         <div class="inCard_body">
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
+                <div> 
+                    <div></div>
+                </div>
+                <div> 
+                    <div></div>
+                </div>
+                <div> 
+                    <div></div>
+                </div>
+                <div> 
+                    <div></div>
+                </div>
+                <div> 
+                    <div></div>
+                </div>
+                <div> 
+                    <div></div>
+                </div>
+                <div> 
+                    <div></div>
+                </div>
+                
+                
         </div>
     </div>
     <div class="inAbout" id="inAbout">
@@ -602,7 +600,6 @@
                             <div class="inAbout_ano" @click="changeAboutNum3">{{about[about_Num3].area}}區</div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="inAbout-area_block">
@@ -667,10 +664,8 @@
 
         </div>
     </div>
-    <!-- 不確定要不要載這個cdn 看不出差別 -->
-    <!-- <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script> -->
     <!-- 神諭卡canvas -->
-    <script>
+    <!-- <script>
         let scene, camera, renderer, ribbon
 
         const container = document.querySelector('#inCard')
@@ -810,8 +805,8 @@
 
         init()
         animate()
-    </script>
-    <script src="./js/indexVue.js"></script>
+    </script>-->
+    <script src="./js/indexVue.js"></script> 
 
 
 </body>

@@ -16,9 +16,19 @@
   margin: 0 auto;
 }
 
+<<<<<<< HEAD
 .seClassTitle {
   display: inline-block;
   padding: 0 11.11vw;
+=======
+.seContent {
+  max-width: 1200px;
+  display: flex;
+}
+
+.seContent .seContent_box {
+  width: 100%;
+>>>>>>> index
 }
 
 .seClassTitle .seClassTitle-content_title {
