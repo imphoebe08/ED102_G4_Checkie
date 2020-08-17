@@ -110,9 +110,16 @@ new Vue({
     vuetify: new Vuetify(),
     data: () => ({
         currentStep: 1,
-        name: '',
-        tel: '',
-        email: '',
+        memName: '',
+        memGender: '',
+        memBD: '',
+        memAdd: '',
+        memOcc: '',
+        memConTel: '',
+        memEmail: {
+            value: "cc.cccc",
+            valid: true,
+        },
         ////////////
         focus: '',
         type: 'month',
