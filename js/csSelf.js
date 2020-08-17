@@ -70,14 +70,16 @@ Vue.component('cssart-layout', {
         openArtPage() {
             window.open("./atSelf.html", "_self");
         },
-        openOrderPage() {
-            window.open("./coCalender.html", "_self");
-        }
     }
 })
 
 
 
 let vm = new Vue({
-    el: "#app"
+    el: "#app",
+    methods: {
+        openOrderPage() {
+            window.open("./coCalender.html", "_self");
+        }
+    }
 })
