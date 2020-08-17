@@ -248,6 +248,7 @@ header{
     margin-left: 20px;
     list-style: none;
     color: rgb(0, 0, 0);
+
     
     .navbar__sign__item{
         display: inline-block;
@@ -257,7 +258,9 @@ header{
         margin: 0;
         padding: 0;
         cursor: pointer;
-
+        &:focus{
+            display: none;
+        }
         &:hover{
             color:$color-pink;
         }
