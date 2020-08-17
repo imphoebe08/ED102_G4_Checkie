@@ -19,15 +19,15 @@
     <header>
         <div class="top">
             <div class="navbar">
-                <a href="" class="navbar__item logo"><img src="./img/navbar/cklogo.png" alt class="desktop_logo"><img
-                        src="./img/navbar/cklogo2.png" alt class="mobile_logo"></a>
+                <a href="./index.html" class="navbar__item logo"><img src="./img/navbar/cklogo.png" alt
+                        class="desktop_logo"><img src="./img/navbar/cklogo2.png" alt class="mobile_logo"></a>
                 <div class="navbar__menu">
-                    <a class="navbar__item navbar__link" href="csMain.html">預約諮詢</a>
-                    <a class="navbar__item navbar__link" href="">線上諮商</a>
-                    <a class="navbar__item navbar__link" href="acMain.html">活動報名</a>
-                    <a class="navbar__item navbar__link" href="atMain.html">專欄文章</a>
-                    <a class="navbar__item navbar__link" href="oracleCard.html">神諭卡</a>
-                    <a class="navbar__item navbar__link" href="">心理評估測驗</a>
+                    <a class="navbar__item navbar__link" href="./csMain.html">預約諮詢</a>
+                    <a class="navbar__item navbar__link" href="./chatRoom.html">線上諮商</a>
+                    <a class="navbar__item navbar__link" href="./acMain.html">活動報名</a>
+                    <a class="navbar__item navbar__link" href="./atMain.html">專欄文章</a>
+                    <a class="navbar__item navbar__link" href="./oracleCard.html">神諭卡</a>
+                    <a class="navbar__item navbar__link" href="./test.html">心理評估測驗</a>
 
                 </div>
 
@@ -188,9 +188,9 @@
             </div>
             <div class="col-12 csS-buttons">
                 <div class="row">
-                    <button type="button" class="button3-1 col-2">現場諮商</button>
-                    <button type="button" class="button3-1 col-2">語音諮商</button>
-                    <button type="button" class="button3-1 col-2">視訊諮商</button>
+                    <button type="button" class="button3-1 col-2" @click="openOrderPage">現場諮商</button>
+                    <button type="button" class="button3-1 col-2" @click="openOrderPage">語音諮商</button>
+                    <button type="button" class="button3-1 col-2" @click="openOrderPage">視訊諮商</button>
                     <button type="button" class="button3-1 col-2">線上諮商</button>
                 </div>
             </div>
