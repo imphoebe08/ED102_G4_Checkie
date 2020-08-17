@@ -368,6 +368,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -383,8 +384,9 @@ header {
   position: fixed;
   left: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
   z-index: 100;
-  display: none;
 }
 
 .signup_overlay .container_close {
