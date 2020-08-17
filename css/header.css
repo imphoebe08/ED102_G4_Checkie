@@ -368,7 +368,6 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -405,6 +404,10 @@ header {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+.signup_overlay-none {
+  display: none;
 }
 
 .container {
