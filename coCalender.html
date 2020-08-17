@@ -336,7 +336,7 @@
                                                 </div>
 
                                                 <label class="radio">
-                                                          <input type="radio" v-model="gender" name="memGender" id="memGender" value="男"> 男
+                                                          <input type="radio" v-model="memGender" name="memGender" id="memGender" value="男"> 男
                                                           <span class="checkmark"></span>
                                                     </label>
                                                 <label class="radio">
@@ -348,10 +348,10 @@
 
                                             <div class="cos-selfForm_item">
                                                 <div>
-                                                    <label for="memBD">出生年月日<span>*</span></label>
+                                                    <label for="memBD">年齡<span>*</span></label>
                                                 </div>
 
-                                                <input type="number" v-model="memBD" class="form-control" name="memBD" id="memBD" required="yes" autocomplete="bday">
+                                                <input type="number" v-model.number="memBD" class="form-control" name="memBD" id="memBD" required="yes" autocomplete="bday">
                                             </div>
 
 
@@ -379,7 +379,7 @@
                                                     <label for="memTel">行動電話<span>*</span></label>
                                                 </div>
 
-                                                <select name="memTel" id="" autocomplete="tel-country-code">
+                                                <select name="memTel" v-model="memTel" id="" autocomplete="tel-country-code">
                                                             <option data-countryCode="TW" value="886" Selected>Taiwan (+886)</option>
                                                             <optgroup label="Other countries">
                                                                 <option data-countryCode="AM" value="374">Armenia (+374)</option>
@@ -408,7 +408,7 @@
                                                 <div>
                                                     <label for="memEmail">電子郵件<span>*</span></label>
                                                 </div>
-                                                <input type="email" class="form-control" name="memEmail" id="memEmail" required="yes" autocomplete="email" />
+                                                <input type="email" v-for="memEmail.value" class="form-control" name="memEmail" id="memEmail" required="yes" autocomplete="email" />
                                             </div>
 
 
