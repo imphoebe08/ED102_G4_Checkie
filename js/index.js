@@ -96,10 +96,10 @@ $(function(){
         // 調圈圈顏色
 
         // inAct
-
-    var t1 = TweenMax.to('.inBanner-circle', 2, {backgroundImage: "linear-gradient(135deg, blue, red)"});
+        
+    var t1 = TweenMax.to('.inBanner-circle', 2, {backgroundImage: "linear-gradient(135deg, #fddb92, #d1fdff)"});
     // 下面這個是大圈圈 因為有兩層 所以多寫一個css
-    var t2 = TweenMax.to('.inBanner_bgImg>.inBanner-big_circle', 2, {backgroundImage: "linear-gradient(135deg, #fff, #fff), linear-gradient(135deg, blue, red)"});
+    var t2 = TweenMax.to('.inBanner_bgImg>.inBanner-big_circle', 2, {backgroundImage: "linear-gradient(135deg, #fff, #fff), linear-gradient(135deg, #fddb92, #d1fdff)"});
         var controller = new ScrollMagic.Controller();
         var scene01 = new ScrollMagic.Scene({
             triggerElement: "#inAct",
@@ -111,9 +111,9 @@ $(function(){
 
         // inArti
 
-    var t3 = TweenMax.to('.inBanner-circle', 2, {backgroundImage: "linear-gradient(135deg,  #E3FDF5, #FFE6FA)"});
+    var t3 = TweenMax.to('.inBanner-circle', 2, {backgroundImage: "linear-gradient(135deg,  #e9defa, #fbfcdb)"});
     // 下面這個是大圈圈 因為有兩層 所以多寫一個css
-    var t4 = TweenMax.to('.inBanner_bgImg>.inBanner-big_circle', 2, {backgroundImage: "linear-gradient(135deg, #fff, #fff), linear-gradient(135deg,  #E3FDF5, #FFE6FA)"});
+    var t4 = TweenMax.to('.inBanner_bgImg>.inBanner-big_circle', 2, {backgroundImage: "linear-gradient(135deg, #fff, #fff), linear-gradient(135deg,  #e9defa, #fbfcdb)"});
         var scene02 = new ScrollMagic.Scene({
             triggerElement: "#inArti",
             offset: 0,
@@ -136,10 +136,10 @@ $(function(){
         .addTo(controller);
 
     // inAbout
-
-    var t7 = TweenMax.to('.inBanner-circle', 2, {backgroundImage: "linear-gradient(135deg,   #7DE2FC,  #B9B6E5)"});
+    
+    var t7 = TweenMax.to('.inBanner-circle', 2, {backgroundImage: "linear-gradient(135deg,   #accbee,  #e7f0fd)"});
     // 下面這個是大圈圈 因為有兩層 所以多寫一個css
-    var t8 = TweenMax.to('.inBanner_bgImg>.inBanner-big_circle', 2, {backgroundImage: "linear-gradient(135deg, #fff, #fff), linear-gradient(135deg,   #7DE2FC,  #B9B6E5)"});
+    var t8 = TweenMax.to('.inBanner_bgImg>.inBanner-big_circle', 2, {backgroundImage: "linear-gradient(135deg, #fff, #fff), linear-gradient(135deg,   #accbee,  #e7f0fd)"});
         var scene04 = new ScrollMagic.Scene({
             triggerElement: "#inAbout",
             offset: 0,
