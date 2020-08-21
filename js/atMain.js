@@ -1,6 +1,6 @@
 var i = 0;
 $(function(){
-    $(".atBanner-box_pic>img").css("transform",`translateY(-50px)`)
+    $(".atBanner-box_pic>img").css("transform",`translateY(-100px)`)
 
 })
 function move_box() {
@@ -10,7 +10,7 @@ function move_box() {
     hWin=$(window).height(),atClassTitle_top=$(".atClassTitle").offset().top,
     banner=$(".atBanner").offset().top,
     banner_dis=win_scroll-banner;
-    $(".atBanner-box_pic>img").css("transform",`translateY(${-50+banner_dis*-0.2}px)`)
+    $(".atBanner-box_pic>img").css("transform",`translateY(${-100+banner_dis*-0.2}px)`)
     
     var move_right = $(".atBox_Class>a").width(),
     win_scroll = $(window).scrollTop(),
