@@ -150,7 +150,7 @@ header {
   width: 100%;
   -webkit-transition: background-color 0s;
   transition: background-color 0s;
-  z-index: 99;
+  z-index: 999;
 }
 
 .top--scrolling {
@@ -286,6 +286,10 @@ header {
   cursor: pointer;
 }
 
+.navbar__sign .navbar__sign__item:focus {
+  display: none;
+}
+
 .navbar__sign .navbar__sign__item:hover {
   color: #FFA492;
 }
@@ -364,11 +368,11 @@ header {
 }
 
 .signup_overlay {
+  border: 1px solid green;
   background: #f6f5f72c;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -405,6 +409,10 @@ header {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+.signup_overlay-none {
+  display: none;
 }
 
 .container {
@@ -619,7 +627,6 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 40px;
   text-align: center;
   top: 0;
   height: 100%;

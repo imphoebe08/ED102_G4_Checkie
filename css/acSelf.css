@@ -50,8 +50,7 @@ table {
 }
 
 body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-weight: 400;
   font-family: "Noto Sans TC", sans-serif;
   margin: 0;
@@ -62,8 +61,7 @@ body {
   width: 350px;
   height: 400px;
   border-radius: 30px;
-  -webkit-box-shadow: 2px 5px 10px 3px rgba(117, 117, 117, 0.2);
-          box-shadow: 2px 5px 10px 3px rgba(117, 117, 117, 0.2);
+  box-shadow: 2px 5px 10px 3px rgba(117, 117, 117, 0.2);
   overflow: hidden;
 }
 
@@ -78,8 +76,6 @@ body {
 
 .acRelate .acRelateCard_text {
   margin-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -152,16 +148,12 @@ a {
 
 main {
   margin: 30px 50px;
-  -webkit-box-shadow: 2px 5px 10px 3px rgba(117, 117, 117, 0.2);
-          box-shadow: 2px 5px 10px 3px rgba(117, 117, 117, 0.2);
+  box-shadow: 2px 5px 10px 3px rgba(117, 117, 117, 0.2);
 }
 
 .acSelf-Banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .acSelf-Banner_pic {
@@ -205,7 +197,6 @@ main {
   color: #fff;
   cursor: pointer;
   background-color: #FFA492;
-  -webkit-transition: .2s all ease-in;
   transition: .2s all ease-in;
 }
 
@@ -217,14 +208,10 @@ main {
 @media screen and (max-width: 986px) {
   .acSelf-btns {
     text-align: unset;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .acSelf-btns .acSelf-btns-markshare {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
   }
   .acSelf-btns .acSelf-btns_apply {
     margin-right: 5px;
@@ -241,14 +228,9 @@ main {
 }
 
 .acInfo_pic {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  justify-content: center;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .acInfo_pic .acInfo_pic--1 {
@@ -270,11 +252,8 @@ main {
 
 .acTeacher {
   margin: 0px 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .acTeacher_intro {
@@ -315,18 +294,13 @@ main {
 }
 
 .acAttension .acAttension_arrow--up {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   background-color: white;
 }
 
 .acAttension .acAttension_arrow--down {
-  -webkit-transform: rotate(225deg) translate(-28px, -28px);
-          transform: rotate(225deg) translate(-28px, -28px);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
+  transform: rotate(225deg) translate(-28px, -28px);
   transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .acAttension .acAttension-text {
@@ -339,13 +313,9 @@ main {
 
 .acRelate {
   background-color: #F5F5F5;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding-bottom: 50px;
   margin-top: 30px;
 }
